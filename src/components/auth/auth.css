@@ -40,11 +40,17 @@
 }
 
 .cross-img {
+  cursor: pointer;
   width: 7%;
   height: auto;
   background-color: var(--color-n-light-purple);
   padding: 1%;
   border-radius: 99px;
+}
+
+.cross-img:hover {
+  cursor: pointer;
+  background-color: var(--color-n-light-blue);
 }
 
 .title-infos {

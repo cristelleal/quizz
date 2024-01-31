@@ -3,6 +3,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
 import trophy from '../../assets/trophy.png';
 import '../auth/auth.css';
@@ -20,16 +21,19 @@ function UserAccount() {
     }
   };
 
-  const [name, setName] = useState(''); 
+  const [name, setName] = useState('');
   useEffect(() => {
     const storedName = localStorage.getItem('name');
     if (storedName) {
-      setName(storedName); 
+      setName(storedName);
     }
   }, []);
 
+  const [quizzCount, setQuizzCount] = useState(0);
+
   return (
     <>
+      <Navbar />
       <div className="container">
         <div className="main-title">
           <img src={redcross} alt="medical cross icon" className="cross-img" />
@@ -37,23 +41,27 @@ function UserAccount() {
         </div>
         <div className="title-infos">
           <span>Espace personnel</span>
-          <p>Bienvenue {name} ! Tu retrouveras dans cet espace tes scores et les quizz disponibles afin de tester tes compétences.</p> 
+          <br />
+          <br />
+          <p>
+            Bienvenue {name} !
+            <br />
+            Tu retrouveras dans cet espace tes scores et les quizz disponibles.
+          </p>
         </div>
-        <div>
-          <div className='user-score'>
-            <img src={trophy} alt="trophy icon" className='trophy-img'/>
-            <p>Quizz réalisés</p>
+        <div className="content">
+          <div className="user-score">
+            <img src={trophy} alt="trophy icon" className="trophy-img" />
+            <p>{quizzCount} Quizz réalisés</p>
           </div>
         </div>
-        <Link to="/quizz">
-          <button className="submit-btn">
-            <span>Quizz numéro 1</span>
-            <svg width="15px" height="10px" viewBox="0 0 13 10">
-              <path d="M1,5 L11,5"></path>
-              <polyline points="8 1 12 5 8 9"></polyline>
-            </svg>
-          </button>
+          <div className="quizz-btn-container">
+        <Link to="/quizz" className="quizz-btn">
+            <span>
+              Quizz numéro 1 : Les gestes d&lsquo;urgences
+            </span>
         </Link>
+          </div>
         <button className="logout" onClick={handleSignOut}>
           Se déconnecter
         </button>

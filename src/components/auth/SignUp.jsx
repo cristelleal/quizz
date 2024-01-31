@@ -35,7 +35,7 @@ function SignUp() {
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage(
-        'Erreur lors de la création du compte. Veuillez réessayer'
+        'Erreur lors de la création du compte : Veuillez réessayer'
       );
     }
   };
@@ -49,7 +49,9 @@ function SignUp() {
           <h1>Quizz - Gestes de secours</h1>
         </div>
         <div className="title-infos">
-          <span>Créer mon compte</span>
+          <span>Créer un compte</span>
+          <br /><br />
+          <p>Remplissez les champs ci-dessous afin de créer votre espace personnel</p>
         </div>
         <form>
           <input
