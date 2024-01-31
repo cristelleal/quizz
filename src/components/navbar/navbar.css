@@ -3,12 +3,12 @@
 .nav {
   top: 0;
   display: flex;
-  margin: 5%;
+  margin: 1% 2% 0 0;
 }
 
 .user-img {
-cursor: pointer;
-  width: 4%;
+  cursor: pointer;
+  width: 2%;
   height: auto;
   padding: 1%;
   background-color: var(--color-n-white);
@@ -19,8 +19,8 @@ cursor: pointer;
 
 @media only screen and (max-width: 767px) {
   .user-img {
-    width: 10%;
-    padding: 2%;
+    width: 6%;
+    padding: 3%;
   }
 
   .nav {
