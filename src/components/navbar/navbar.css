@@ -1,0 +1,29 @@
+@import url('../../variables.css');
+
+.nav {
+  top: 0;
+  display: flex;
+  margin: 5%;
+}
+
+.user-img {
+cursor: pointer;
+  width: 4%;
+  height: auto;
+  padding: 1%;
+  background-color: var(--color-n-white);
+  border-radius: 99px;
+  box-shadow: var(--box-shadow-0);
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .user-img {
+    width: 10%;
+    padding: 2%;
+  }
+
+  .nav {
+    margin: 5%;
+  }
+}

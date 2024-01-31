@@ -1,0 +1,23 @@
+@import url('../../variables.css');
+
+.user-score {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.trophy-img {
+    width: 10%;
+    height: auto;
+    margin-right: 3%;
+}
+
+.logout {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: var(--color-n-dark);
+    text-align: right;
+    font-size: small;
+}

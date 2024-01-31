@@ -1,0 +1,215 @@
+@import url('../../variables.css');
+
+.container {
+  height: auto;
+  width: 50%;
+  margin: auto;
+  background-color: var(--color-n-white);
+  color: var(--color-n-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 3% 4%;
+  box-shadow: var(--box-shadow-0);
+}
+
+.main-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.5%;
+}
+
+.main-title h1 {
+  margin-left: 20%;
+  font-size: x-large;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: wrap;
+}
+
+.main-title h1:before {
+  background-color: var(--color-orange);
+  content: '';
+  display: block;
+  height: 3px;
+  width: 75px;
+  margin-bottom: 5px;
+}
+
+.cross-img {
+  width: 7%;
+  height: auto;
+  background-color: var(--color-n-light-purple);
+  padding: 1%;
+  border-radius: 99px;
+}
+
+.title-infos {
+  font-size: medium;
+  background-color: var(--color-n-light-purple);
+  margin: 4% 0 0 0;
+  padding: 5%;
+  border-radius: 8px;
+}
+
+.title-infos span {
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 5% 25%;
+}
+
+form .form-input {
+  outline: 0;
+  background: var(--color-n-grey);
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+form .form-input:focus {
+  background-color: var(--color-n-light-blue);
+  outline: 2px solid var(--color-n-purple);
+}
+
+.sign-in-btn {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: small;
+  margin-top: 3%;
+  color: var(--color-n-strong-blue);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.error-message {
+  text-align: center;
+  color: var(--color-n-wrong);
+  font-size: small;
+  margin: .5% 0 5% 0;
+}
+
+.signup {
+  text-decoration: underline;
+  color: var(--color-n-dark);
+}
+
+/* Button animation */
+
+.submit-btn {
+  position: relative;
+  margin: auto;
+  margin-top: 2%;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.submit-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: var(--color-n-light-blue);
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn span {
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-n-strong-blue);
+}
+
+.submit-btn svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--color-n-strong-blue);
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:before {
+  width: 100%;
+  background: var(--color-n-light-blue);
+}
+
+.submit-btn:hover svg {
+  transform: translateX(0);
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    height: auto;
+    width: 80%;
+    gap: 20px;
+    padding: 5% 6%;
+  }
+
+  .cross-img {
+    width: 10%;
+    height: auto;
+  }
+
+  .magic-img {
+    width: 8%;
+    height: auto;
+    margin-right: 5%;
+  }
+
+  .main-title {
+    margin-top: 3%;
+  }
+
+  .main-title h1 {
+    font-size: x-large;
+    margin-left: 10%;
+  }
+
+  .title-infos {
+    padding: 8%;
+  }
+
+  form {
+    margin: 4% 10%;
+  }
+
+  .submit-btn {
+    padding: 10px 16px;
+  }
+
+  .submit-btn:before {
+    width: 35px;
+    height: 35px;
+  }
+
+  .submit-btn span {
+    font-size: 14px;
+  }
+}
