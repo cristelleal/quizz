@@ -1,49 +1,50 @@
 @import url('../../variables.css');
 
 .content {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .user-score {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .trophy-img {
-    width: 10%;
-    height: auto;
-    margin-right: 3%;
+  width: 10%;
+  height: auto;
+  margin-right: 3%;
 }
 
 .logout {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    text-decoration: underline;
-    color: var(--color-n-dark);
-    text-align: right;
-    font-size: small;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--color-n-dark);
+  text-align: right;
+  font-size: small;
 }
 
 .quizz-btn-container {
-    display: flex;
-    justify-content: center;
-    margin: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
 }
 
 .quizz-btn {
-    color: var(--color-n-dark);
-    cursor: pointer;
-    border: none;
-    background-color: var(--color-n-light-blue);
-    padding: 2% 6%;
-    border-radius: 8px;
-    font-weight: bold;
-    text-decoration: none;
+  color: var(--color-n-dark);
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-n-light-blue);
+  padding: 3% 7%;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }
 
 .quizz-btn:hover {
-    outline: 1px solid var(--color-n-light-blue);
+  outline: 1px solid var(--color-n-light-blue);
 }
-

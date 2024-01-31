@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { signOut } from 'firebase/auth';
-import { auth } from '../../firebase/firebase.config';
+import { auth, db } from '../../firebase/firebase.config';
+import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
@@ -22,14 +23,27 @@ function UserAccount() {
   };
 
   const [name, setName] = useState('');
-  useEffect(() => {
-    const storedName = localStorage.getItem('name');
-    if (storedName) {
-      setName(storedName);
-    }
-  }, []);
-
   const [quizzCount, setQuizzCount] = useState(0);
+
+  const fetchUserData = async () => {
+    if (auth.currentUser) {
+      const docRef = doc(db, 'users', auth.currentUser.uid);
+      try {
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setName(docSnap.data().name);
+          setQuizzCount(docSnap.data().quizzCount);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
   return (
     <>
@@ -46,22 +60,23 @@ function UserAccount() {
           <p>
             Bienvenue {name} !
             <br />
-            Tu retrouveras dans cet espace tes scores et les quizz disponibles.
+            Vous retrouverez dans cet espace vos quizz et vos scores
           </p>
         </div>
         <div className="content">
           <div className="user-score">
             <img src={trophy} alt="trophy icon" className="trophy-img" />
-            <p>{quizzCount} Quizz réalisés</p>
+            <p>{quizzCount} Quizz réalisé(s)</p>
           </div>
         </div>
-          <div className="quizz-btn-container">
-        <Link to="/quizz" className="quizz-btn">
+        <div className="quizz-btn-container">
+          <Link to="/quizz" className="quizz-btn">
             <span>
-              Quizz numéro 1 : Les gestes d&lsquo;urgences
+              Quizz numéro 1 <br />
+              Les gestes d&lsquo;urgences
             </span>
-        </Link>
-          </div>
+          </Link>
+        </div>
         <button className="logout" onClick={handleSignOut}>
           Se déconnecter
         </button>

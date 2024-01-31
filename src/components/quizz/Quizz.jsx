@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
+import { db, auth } from '../../firebase/firebase.config';
+import { updateDoc, increment, doc } from 'firebase/firestore';
 import { data } from '../../assets/data';
+import Navbar from '../../components/navbar/Navbar';
 import { CircularProgressbar } from 'react-circular-progressbar';
-import Navbar from '../../components/navbar/Navbar'
-import './quizz.css';
 import 'react-circular-progressbar/dist/styles.css';
+import './quizz.css';
 
 function Quizz() {
   let [index, setIndex] = useState(0);
@@ -32,10 +34,14 @@ function Quizz() {
     }
   };
 
-  const next = () => {
+  const next = async () => {
     if (lock === true) {
       if (index === data.length - 1) {
         setResult(true);
+        const userRef = doc(db, 'users', auth.currentUser.uid);
+        await updateDoc(userRef, {
+          quizzCount: increment(1),
+        });
         return 0;
       }
       setIndex((index += 1));

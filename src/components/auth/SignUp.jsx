@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/firebase.config';
+import { auth, db } from '../../firebase/firebase.config';
+import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
@@ -27,10 +28,18 @@ function SignUp() {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-
+  
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      localStorage.setItem('name', name);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await addDoc(collection(db, 'users'), {
+        uid: userCredential.user.uid,
+        quizzCount: 0,
+        name: name,
+      });
       navigate('/userAccount');
     } catch (error) {
       console.error('Error:', error);
@@ -50,8 +59,12 @@ function SignUp() {
         </div>
         <div className="title-infos">
           <span>Créer un compte</span>
-          <br /><br />
-          <p>Remplissez les champs ci-dessous afin de créer votre espace personnel</p>
+          <br />
+          <br />
+          <p>
+            Remplissez les champs ci-dessous afin de créer votre espace
+            personnel
+          </p>
         </div>
         <form>
           <input
