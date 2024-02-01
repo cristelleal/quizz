@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../../firebase/firebase.config';
-import { addDoc, collection } from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore'; 
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
@@ -28,18 +28,23 @@ function SignUp() {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-  
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-      await addDoc(collection(db, 'users'), {
-        uid: userCredential.user.uid,
-        quizzCount: 0,
-        name: name,
-      });
+      const userRef = doc(db, 'users', userCredential.user.uid); 
+      await setDoc(
+        userRef,
+        {
+          uid: userCredential.user.uid,
+          quizzCount: 0,
+          name: name,
+        },
+        { merge: true }
+      ); 
       navigate('/userAccount');
     } catch (error) {
       console.error('Error:', error);

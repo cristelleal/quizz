@@ -30,20 +30,22 @@ function UserAccount() {
       const docRef = doc(db, 'users', auth.currentUser.uid);
       try {
         const docSnap = await getDoc(docRef);
-
+  
         if (docSnap.exists()) {
           setName(docSnap.data().name);
           setQuizzCount(docSnap.data().quizzCount);
+          console.log('User data fetched successfully');
         }
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
-    }
+    } 
   };
-
+  
   useEffect(() => {
     fetchUserData();
   }, []);
+  
 
   return (
     <>

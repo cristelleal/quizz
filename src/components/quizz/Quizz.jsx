@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { db, auth } from '../../firebase/firebase.config';
-import { updateDoc, increment, doc } from 'firebase/firestore';
+import { increment, doc, setDoc } from 'firebase/firestore';
 import { data } from '../../assets/data';
 import Navbar from '../../components/navbar/Navbar';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -35,21 +35,28 @@ function Quizz() {
   };
 
   const next = async () => {
-    if (lock === true) {
+    if (lock) {
       if (index === data.length - 1) {
         setResult(true);
-        const userRef = doc(db, 'users', auth.currentUser.uid);
-        await updateDoc(userRef, {
-          quizzCount: increment(1),
-        });
+        if (auth.currentUser) {
+          const userRef = doc(db, 'users', auth.currentUser.uid);
+          try {
+            await setDoc(
+              userRef,
+              { quizzCount: increment(1) },
+              { merge: true }
+            );
+          } catch (error) {
+            console.error('Error updating quizzCount:', error);
+          }
+        }
         return 0;
       }
       setIndex((index += 1));
       setQuestion(data[index]);
       setLock(false);
-      optionArray.map((option) => {
-        option.current.classList.remove('wrong');
-        option.current.classList.remove('correct');
+      optionArray.forEach((option) => {
+        option.current.classList.remove('wrong', 'correct');
       });
     }
   };
