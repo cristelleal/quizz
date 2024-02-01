@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { db, auth } from '../../firebase/firebase.config';
-import { increment, doc, setDoc } from 'firebase/firestore';
+import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import { data } from '../../assets/data';
 import Navbar from '../../components/navbar/Navbar';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -43,7 +43,10 @@ function Quizz() {
           try {
             await setDoc(
               userRef,
-              { quizzCount: increment(1) },
+              { 
+                quizzCount: increment(1),
+                quizzScores: arrayUnion(percentage) 
+              },
               { merge: true }
             );
           } catch (error) {

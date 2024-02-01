@@ -4,6 +4,8 @@ import { auth, db } from '../../firebase/firebase.config';
 import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
 import trophy from '../../assets/trophy.png';
@@ -24,28 +26,31 @@ function UserAccount() {
 
   const [name, setName] = useState('');
   const [quizzCount, setQuizzCount] = useState(0);
+  const [averageScore, setAverageScore] = useState(0);
 
   const fetchUserData = async () => {
     if (auth.currentUser) {
       const docRef = doc(db, 'users', auth.currentUser.uid);
       try {
         const docSnap = await getDoc(docRef);
-  
+
         if (docSnap.exists()) {
-          setName(docSnap.data().name);
-          setQuizzCount(docSnap.data().quizzCount);
+          const userData = docSnap.data();
+          setName(userData.name);
+          setQuizzCount(userData.quizzCount);
+          const totalScore = userData.quizzScores.reduce((a, b) => a + b, 0);
+          setAverageScore(totalScore / userData.quizzCount);
           console.log('User data fetched successfully');
         }
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
-    } 
+    }
   };
-  
+
   useEffect(() => {
     fetchUserData();
   }, []);
-  
 
   return (
     <>
@@ -56,20 +61,23 @@ function UserAccount() {
           <h1>Quizz - Gestes de secours</h1>
         </div>
         <div className="title-infos">
-          <span>Espace personnel</span>
-          <br />
-          <br />
           <p>
-            Bienvenue {name} !
+            Bienvenue <b>{name}</b>,
             <br />
             Vous retrouverez dans cet espace vos quizz et vos scores
           </p>
         </div>
         <div className="content">
-          <div className="user-score">
-            <img src={trophy} alt="trophy icon" className="trophy-img" />
-            <p>{quizzCount} Quizz réalisé(s)</p>
+          <img src={trophy} alt="trophy icon" className="trophy-img" />
+          <p>{quizzCount} Quizz réalisé(s)</p>
+          <div className="percentage-container">
+            <CircularProgressbar
+              value={averageScore}
+              text={`${averageScore}%`}
+              id="circle-score"
+            />
           </div>
+            <p>Score total réalisé</p>
         </div>
         <div className="quizz-btn-container">
           <Link to="/quizz" className="quizz-btn">

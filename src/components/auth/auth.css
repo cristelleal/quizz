@@ -43,14 +43,14 @@
   cursor: pointer;
   width: 7%;
   height: auto;
-  background-color: var(--color-n-light-purple);
   padding: 1%;
   border-radius: 99px;
+  background-color: var(--color-n-light-blue);
 }
 
 .cross-img:hover {
   cursor: pointer;
-  background-color: var(--color-n-light-blue);
+  background-color: var(--color-n-light-purple);
 }
 
 .title-infos {
