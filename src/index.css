@@ -10,6 +10,10 @@ body {
     background-color: var(--color-n-light-blue);
 }
 
+html, body, #app {
+    touch-action: manipulation;
+}
+
 ::selection {
     color: var(--color-n-dark);
     background-color: var(--color-n-light-blue);
