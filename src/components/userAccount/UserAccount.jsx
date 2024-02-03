@@ -16,7 +16,7 @@ function UserAccount() {
   const navigate = useNavigate();
   const handleSignOut = async () => {
     try {
-      const authInstance = getAuth();
+      getAuth();
       await signOut(auth);
       navigate('/');
       localStorage.removeItem('name');
@@ -41,7 +41,6 @@ function UserAccount() {
           setQuizzCount(userData.quizzCount);
           const totalScore = userData.quizzScores.reduce((a, b) => a + b, 0);
           setAverageScore(totalScore / userData.quizzCount);
-          console.log('User data fetched successfully');
         }
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -54,7 +53,6 @@ function UserAccount() {
       try {
         const authInstance = getAuth();
         await setPersistence(authInstance, browserSessionPersistence);
-        console.log('Persistance configurée avec succès');
         await fetchUserData();
       } catch (error) {
         console.error('Erreur lors de la configuration de la persistance ou fetching user data:', error);

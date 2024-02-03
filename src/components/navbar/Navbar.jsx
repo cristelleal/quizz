@@ -23,8 +23,8 @@ function Navbar() {
   return (
     <>
       <header>
-        <div className="nav" onClick={handleClick}>
-          <img src={userImg} alt="user icon" className="user-img" />
+        <div className='nav' onClick={handleClick}>
+          <img src={userImg} alt='user icon' className='user-img' />
         </div>
       </header>
     </>

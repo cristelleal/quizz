@@ -31,9 +31,7 @@ function SignUp() {
 
     try {
       const authInstance = getAuth();
-      await setPersistence(authInstance, browserSessionPersistence);
-      console.log('Persistance configurée avec succès');
-      
+      await setPersistence(authInstance, browserSessionPersistence);      
       const userCredential = await createUserWithEmailAndPassword(
         authInstance,
         email,
@@ -63,9 +61,8 @@ function SignUp() {
       try {
         const authInstance = getAuth();
         await setPersistence(authInstance, browserSessionPersistence);
-        console.log('Persistance configurée avec succès');
       } catch (error) {
-        console.error('Erreur lors de la configuration de la persistance :', error);
+        console.error('Error :', error);
       }
     };
 
