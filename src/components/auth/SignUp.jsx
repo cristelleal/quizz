@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, db } from '../../firebase/firebase.config';
+import { useState, useEffect } from 'react';
+import { db } from '../../firebase/firebase.config';
+import { createUserWithEmailAndPassword, getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore'; 
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
@@ -30,8 +30,12 @@ function SignUp() {
     event.preventDefault();
 
     try {
+      const authInstance = getAuth();
+      await setPersistence(authInstance, browserSessionPersistence);
+      console.log('Persistance configurée avec succès');
+      
       const userCredential = await createUserWithEmailAndPassword(
-        auth,
+        authInstance,
         email,
         password
       );
@@ -53,6 +57,20 @@ function SignUp() {
       );
     }
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const authInstance = getAuth();
+        await setPersistence(authInstance, browserSessionPersistence);
+        console.log('Persistance configurée avec succès');
+      } catch (error) {
+        console.error('Erreur lors de la configuration de la persistance :', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>

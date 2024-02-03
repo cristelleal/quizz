@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/firebase.config';
+import { signInWithEmailAndPassword, getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
@@ -25,7 +24,10 @@ function Auth() {
     event.preventDefault();
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const authInstance = getAuth();
+      await setPersistence(authInstance, browserSessionPersistence);
+      console.log('Persistance configurée avec succès');
+      await signInWithEmailAndPassword(authInstance, email, password);
       navigate('/userAccount');
     } catch (error) {
       console.error('Error:', error);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { signOut } from 'firebase/auth';
+import { signOut, setPersistence, browserSessionPersistence, getAuth } from 'firebase/auth';
 import { auth, db } from '../../firebase/firebase.config';
 import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +16,7 @@ function UserAccount() {
   const navigate = useNavigate();
   const handleSignOut = async () => {
     try {
+      const authInstance = getAuth();
       await signOut(auth);
       navigate('/');
       localStorage.removeItem('name');
@@ -49,7 +50,18 @@ function UserAccount() {
   };
 
   useEffect(() => {
-    fetchUserData();
+    const fetchData = async () => {
+      try {
+        const authInstance = getAuth();
+        await setPersistence(authInstance, browserSessionPersistence);
+        console.log('Persistance configurée avec succès');
+        await fetchUserData();
+      } catch (error) {
+        console.error('Erreur lors de la configuration de la persistance ou fetching user data:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (

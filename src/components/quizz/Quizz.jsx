@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { db, auth } from '../../firebase/firebase.config';
+import { getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import { data } from '../../assets/data';
 import Navbar from '../../components/navbar/Navbar';
@@ -78,6 +79,20 @@ function Quizz() {
 
   const percentage = calculateSuccessPercentage();
   const isScoreAboveHalf = calculateSuccessPercentage() > 50;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const authInstance = getAuth();
+        await setPersistence(authInstance, browserSessionPersistence);
+        console.log('Persistance configurée avec succès');
+      } catch (error) {
+        console.error('Erreur lors de la configuration de la persistance :', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
