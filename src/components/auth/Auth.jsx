@@ -7,7 +7,7 @@ import {
 import handleFirebaseError from '../../firebase/handleFirebaseError';
 import { validateEmail, validatePassword } from '../../utils/utils';
 import { Link, useNavigate } from 'react-router-dom';
-import Form from '../form/form';
+import Form from '../form/Form';
 import Navbar from '../navbar/Navbar';
 import backgroundImage from '../../assets/ambulance.jpg';
 import icon from '../../assets/redcross.png';

@@ -5,7 +5,7 @@ import { setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import handleFirebaseError from '../../firebase/handleFirebaseError';
 import { validateName, validateEmail, validatePassword } from '../../utils/utils';
-import Form from '../form/form';
+import Form from '../form/Form';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
 import './auth.css';
