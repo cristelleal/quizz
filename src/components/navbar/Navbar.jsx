@@ -24,7 +24,7 @@ function Navbar() {
     <>
       <header>
         <div className='nav' onClick={handleClick}>
-          <img src={userImg} alt='user icon' className='user-img' />
+          {/* <img src={userImg} alt='user icon' className='user-img' /> */}
         </div>
       </header>
     </>

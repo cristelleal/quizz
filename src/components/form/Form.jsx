@@ -18,28 +18,48 @@ function Form({ handleFormSubmit, setFormErrorMessage, buttonText }) {
   };
 
   return (
-    <form>
-      <Input
-        type='email'
-        placeholder='Email'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <Input
-        type='password'
-        placeholder='Mot de passe'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {errorMessage && <p className='error-message'>{errorMessage}</p>}
-      <Button buttonText={buttonText} handleClick={handleSubmit} />
+    <form className='mt-8 grid grid-cols-6 gap-6 py-12 px-12'>
+      <div className='col-span-6 sm:col-span-3'>
+          <label
+            htmlFor='Email'
+            className='block text-sm font-medium text-gray-700'
+          >
+            Email
+          </label>
+          <Input
+            type='email'
+            placeholder=''
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className='col-span-6 sm:col-span-3'>
+          <label
+            htmlFor='Password'
+            className='block text-sm font-medium text-gray-700'
+          >
+            Mot de passe
+          </label>
+          <Input
+            type='password'
+            placeholder=''
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className='col-span-6 sm:col-span-'>
+        {errorMessage && (
+          <p className='text-red-500 text-xs italic'>{errorMessage}</p>
+        )}
+        </div>
+        <Button buttonText={buttonText} handleClick={handleSubmit} />
     </form>
   );
 }
 
 Form.propTypes = {
   handleFormSubmit: PropTypes.func.isRequired,
-  setFormErrorMessage: PropTypes.string.isRequired,
+  setFormErrorMessage: PropTypes.string,
   buttonText: PropTypes.string.isRequired,
 };
 

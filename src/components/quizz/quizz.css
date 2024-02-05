@@ -1,7 +1,5 @@
 @import url('../../variables.css');
 
-/* Loader animation */
-
 .loader {
   position: relative;
   width: 2.5em;
@@ -75,8 +73,6 @@
 .loader {
   position: absolute;
 }
-
-/* Quizz box */
 
 .container {
   height: auto;
@@ -204,8 +200,6 @@ ul li:hover {
   text-decoration: underline;
   color: var(--color-n-dark);
 }
-
-/* Button animation */
 
 .next-btn {
   position: relative;

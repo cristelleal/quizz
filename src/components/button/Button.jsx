@@ -2,19 +2,20 @@ import PropTypes from 'prop-types';
 
 function Button({ buttonText, handleClick }) {
   return (
-    <button className='submit-btn' onClick={handleClick}>
-      <span>{buttonText}</span>
-      <svg width='15px' height='10px' viewBox='0 0 13 10'>
-        <path d='M1,5 L11,5'></path>
-        <polyline points='8 1 12 5 8 9'></polyline>
-      </svg>
-    </button>
+    <div className='col-span-6 sm:flex sm:items-center sm:gap-4'>
+      <button
+        className='inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500'
+        onClick={handleClick}
+      >
+        {buttonText}
+      </button>
+    </div>
   );
 }
 
 Button.propTypes = {
-    buttonText: PropTypes.string.isRequired,
-    handleClick: PropTypes.func.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default Button;
