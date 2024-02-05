@@ -3,14 +3,14 @@ import { db } from '../../firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore'; 
 import { useNavigate } from 'react-router-dom';
+import Form from '../form/form';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
 import './auth.css';
+import Input from '../input/input';
 
 function SignUp() {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
@@ -18,17 +18,7 @@ function SignUp() {
     setName(event.target.value);
   };
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSignUp = async (event) => {
-    event.preventDefault();
-
+  const handleSignUp = async (email, password) => {
     try {
       const authInstance = getAuth();
       await setPersistence(authInstance, browserSessionPersistence);      
@@ -50,9 +40,7 @@ function SignUp() {
       navigate('/userAccount');
     } catch (error) {
       console.error('Error:', error);
-      setErrorMessage(
-        'Erreur lors de la création du compte : Veuillez réessayer'
-      );
+      setErrorMessage('Erreur lors de la création du compte : Veuillez réessayer');
     }
   };
 
@@ -86,37 +74,17 @@ function SignUp() {
             personnel
           </p>
         </div>
-        <form>
-          <input
-            type="text"
-            placeholder="Pseudo"
-            value={name}
-            onChange={handleNameChange}
-            className="form-input"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
-            className="form-input"
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            value={password}
-            onChange={handlePasswordChange}
-            className="form-input"
-          />
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
-          <button className="submit-btn" onClick={handleSignUp}>
-            <span>Valider</span>
-            <svg width="15px" height="10px" viewBox="0 0 13 10">
-              <path d="M1,5 L11,5"></path>
-              <polyline points="8 1 12 5 8 9"></polyline>
-            </svg>
-          </button>
-        </form>
+        <Input
+          type="text"
+          placeholder="Pseudo"
+          value={name}
+          onChange={handleNameChange}
+        />
+        <Form 
+          handleFormSubmit={handleSignUp} 
+          formErrorMessage={errorMessage} 
+          buttonText='Valider' 
+        />
       </div>
     </>
   );

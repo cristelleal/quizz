@@ -1,4 +1,4 @@
-@import url('../../variables.css');
+/* @import url('../../variables.css');
 
 .container {
   height: auto;
@@ -110,8 +110,6 @@ form .form-input:focus {
   color: var(--color-n-dark);
 }
 
-/* Button animation */
-
 .submit-btn {
   position: relative;
   margin: auto;
@@ -218,4 +216,4 @@ form .form-input:focus {
   .submit-btn span {
     font-size: 14px;
   }
-}
+} */
