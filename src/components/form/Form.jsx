@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import Input from '../input/input';
+import Input from '../input/Input';
 import Button from '../button/Button';
 
 function Form({ handleFormSubmit, setFormErrorMessage, buttonText }) {

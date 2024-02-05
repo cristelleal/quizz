@@ -9,7 +9,7 @@ import Form from '../form/Form';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
 import './auth.css';
-import Input from '../input/input';
+import Input from '../input/Input';
 
 function SignUp() {
   const [name, setName] = useState('');
