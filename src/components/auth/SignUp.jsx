@@ -3,6 +3,8 @@ import { db } from '../../firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore'; 
 import { useNavigate } from 'react-router-dom';
+import handleFirebaseError from '../../firebase/handleFirebaseError';
+import { validateName, validateEmail, validatePassword } from '../../utils/utils';
 import Form from '../form/form';
 import Navbar from '../navbar/Navbar';
 import redcross from '../../assets/redcross.png';
@@ -11,7 +13,7 @@ import Input from '../input/input';
 
 function SignUp() {
   const [name, setName] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const errorMessage = '';
   const navigate = useNavigate();
 
   const handleNameChange = (event) => {
@@ -19,6 +21,15 @@ function SignUp() {
   };
 
   const handleSignUp = async (email, password) => {
+    if (!validateName(name)) {
+      return 'Veuillez remplir un nom valide (3 à 16 caractères)';
+    }
+    if (!validateEmail(email)) {
+      return 'Veuillez remplir l\'adresse e-mail correctement';
+    }
+    if (!validatePassword(password)) {
+       return 'Le mot de passe est invalide';
+    }
     try {
       const authInstance = getAuth();
       await setPersistence(authInstance, browserSessionPersistence);      
@@ -39,8 +50,7 @@ function SignUp() {
       ); 
       navigate('/userAccount');
     } catch (error) {
-      console.error('Error:', error);
-      setErrorMessage('Erreur lors de la création du compte : Veuillez réessayer');
+      return handleFirebaseError(error);   
     }
   };
 
@@ -82,7 +92,7 @@ function SignUp() {
         />
         <Form 
           handleFormSubmit={handleSignUp} 
-          formErrorMessage={errorMessage} 
+          setFormErrorMessage={errorMessage} 
           buttonText='Valider' 
         />
       </div>

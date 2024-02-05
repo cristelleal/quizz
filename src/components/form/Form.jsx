@@ -3,16 +3,17 @@ import { useState } from 'react';
 import Input from '../input/input';
 import Button from '../button/Button';
 
-function Form({ handleFormSubmit, formErrorMessage, buttonText }) {
+function Form({ handleFormSubmit, setFormErrorMessage, buttonText }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(formErrorMessage);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const error = await handleFormSubmit(email, password);
     if (error) {
       setErrorMessage(error);
+      setFormErrorMessage(error);
     }
   };
 
@@ -38,7 +39,7 @@ function Form({ handleFormSubmit, formErrorMessage, buttonText }) {
 
 Form.propTypes = {
   handleFormSubmit: PropTypes.func.isRequired,
-  formErrorMessage: PropTypes.string,
+  setFormErrorMessage: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
 

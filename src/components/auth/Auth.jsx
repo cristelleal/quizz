@@ -4,6 +4,8 @@ import {
   setPersistence,
   browserSessionPersistence,
 } from 'firebase/auth';
+import handleFirebaseError from '../../firebase/handleFirebaseError';
+import { validateEmail, validatePassword } from '../../utils/utils';
 import { Link, useNavigate } from 'react-router-dom';
 import Form from '../form/form';
 import Navbar from '../navbar/Navbar';
@@ -11,17 +13,23 @@ import redcross from '../../assets/redcross.png';
 import './auth.css';
 
 function Auth() {
+  const errorMessage = '';
   const navigate = useNavigate();
 
   const handleSignIn = async (email, password) => {
+    if (!validateEmail(email)) {
+      return 'Veuillez remplir l\'adresse e-mail correctement';
+    }
+    if (!validatePassword(password)) {
+       return 'Le mot de passe est invalide';
+    }
     try {
       const authInstance = getAuth();
       await setPersistence(authInstance, browserSessionPersistence);
       await signInWithEmailAndPassword(authInstance, email, password);
       navigate('/userAccount');
     } catch (error) {
-      console.error('Error:', error);
-      return 'Erreur de connexion : Vérifiez vos identifiants ou procédez à votre inscription';
+      return handleFirebaseError(error);
     }
   };
 
@@ -42,9 +50,13 @@ function Auth() {
           <br />
           <span>Évaluez vos compétences en secourisme dès maintenant ! </span>
         </div>
-        <Form handleFormSubmit={handleSignIn} buttonText='Se connecter' />
-        <Link to="/signup">
-        <span>Créér un compte</span>
+        <Form
+          handleFormSubmit={handleSignIn}
+          setFormErrorMessage={errorMessage}
+          buttonText='Se connecter'
+        />
+        <Link to='/signup'>
+          <span>Créér un compte</span>
         </Link>
       </div>
     </>
