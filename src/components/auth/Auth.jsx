@@ -10,7 +10,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Form from '../form/Form';
 import Navbar from '../navbar/Navbar';
 import backgroundImage from '../../assets/ambulance.jpg';
-import './auth.css';
 
 function Auth() {
   const errorMessage = '';

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
-import { signOut, setPersistence, browserSessionPersistence, getAuth } from 'firebase/auth';
+import {
+  signOut,
+  setPersistence,
+  browserSessionPersistence,
+  getAuth,
+} from 'firebase/auth';
 import { auth, db } from '../../firebase/firebase.config';
 import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Navbar from '../navbar/Navbar';
-import redcross from '../../assets/redcross.png';
-import trophy from '../../assets/trophy.png';
-import '../auth/auth.css';
 import './userAccount.css';
 
 function UserAccount() {
@@ -55,7 +57,10 @@ function UserAccount() {
         await setPersistence(authInstance, browserSessionPersistence);
         await fetchUserData();
       } catch (error) {
-        console.error('Erreur lors de la configuration de la persistance ou fetching user data:', error);
+        console.error(
+          'Erreur lors de la configuration de la persistance ou fetching user data:',
+          error
+        );
       }
     };
 
@@ -65,42 +70,64 @@ function UserAccount() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <div className="main-title">
-          <img src={redcross} alt="medical cross icon" className="cross-img" />
-          <h1>Quizz - Gestes de secours</h1>
-        </div>
-        <div className="title-infos">
-          <p>
-            Bienvenue <b>{name}</b>,
-            <br />
-            Vous retrouverez dans cet espace vos quizz et vos scores
-          </p>
-        </div>
-        <div className="content">
-          <img src={trophy} alt="trophy icon" className="trophy-img" />
-          <p>{quizzCount} Quizz réalisé(s)</p>
-          <div className="percentage-container">
-            <CircularProgressbar
-              value={averageScore}
-              text={`${averageScore}%`}
-              id="circle-score"
-            />
+      <section className='bg-white'>
+        <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
+          <div className='mx-auto max-w-3xl text-center'>
+            <h2 className='text-3xl font-bold text-gray-900 sm:text-4xl'>
+              Bienvenue {name},
+            </h2>
+            <p className='mt-4 text-gray-500 sm:text-xl'>
+              Ceci est votre espace personnel. Vous y retrouverez les quiz
+              disponibles et l&apos;évolution de vos scores
+            </p>
           </div>
-            <p>Score total réalisé</p>
+          <div className='mt-8 sm:mt-12'>
+            <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
+              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center'>
+                <dt className='order-last text-lg font-medium text-gray-500'>
+                  Total score
+                </dt>
+                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
+                  <CircularProgressbar
+                    styles={buildStyles({
+                      textColor: '#EF4444',
+                      pathColor: `rgba(139, 0, 0, ${averageScore / 100})`,
+                    })}
+                    className='circular-progress-bar'
+                    value={averageScore}
+                    text={`${averageScore}%`}
+                    id='circle-score'
+                  />
+                </dd>
+              </div>
+              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
+                <dt className='order-last text-lg font-medium text-gray-500'>
+                  <Link to='/quizz' className='quizz-btn'>
+                    Niveau facile <br />
+                    <span className='underline'>Clique ici pour jouer</span>
+                  </Link>
+                </dt>
+                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                  Quiz #1
+                </dd>
+              </div>
+              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
+                <dt className='order-last text-lg font-medium text-gray-500'>
+                  Quiz réalisé(s)
+                </dt>
+                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                  {quizzCount}
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div className='flex justify-center mt-12 mb-12'>
+            <button className='underline' onClick={handleSignOut}>
+              Se déconnecter
+            </button>
+          </div>
         </div>
-        <div className="quizz-btn-container">
-          <Link to="/quizz" className="quizz-btn">
-            <span>
-              Quizz numéro 1 <br />
-              Les gestes d&lsquo;urgences
-            </span>
-          </Link>
-        </div>
-        <button className="logout" onClick={handleSignOut}>
-          Se déconnecter
-        </button>
-      </div>
+      </section>
     </>
   );
 }

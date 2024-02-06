@@ -1,62 +1,9 @@
-/* @import url('../../variables.css');
-
-.content {
-  margin: 5% 5% 0 5%;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  border: .3px dashed var(--color-n-border);
-  border-radius: 8px;
-}
-
-.trophy-img {
-  width: 8%;
-  height: auto;
-  margin-right: 3%;
-}
-
-.percentage-container {
-  margin: 5%;
-  width: 11%;
+.circular-progress-bar {
+  width: 150px;
   height: auto;
 }
 
-.logout {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  text-decoration: underline;
-  color: var(--color-n-dark);
-  text-align: right;
-  font-size: small;
+.troyphy-img {
+  width: 50px;
+  height: auto;
 }
-
-.quizz-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3%;
-}
-
-.quizz-btn {
-  color: var(--color-n-dark);
-  cursor: pointer;
-  border: none;
-  background-color: var(--color-n-light-blue);
-  padding: 3% 7%;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-}
-
-.quizz-btn:hover {
-  outline: 1px solid var(--color-n-light-blue);
-}
-
-@media only screen and (max-width: 767px) {
-} */

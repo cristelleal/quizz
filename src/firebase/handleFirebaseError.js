@@ -16,6 +16,6 @@ export default function handleFirebaseError(error) {
     case 'auth/weak-password':
       return 'Le mot de passe est trop faible';
     default:
-      return 'Erreur. Veuillez réessayer';
+      return 'Erreur. Veuillez réessayer ou créer votre compte';
   }
 }
