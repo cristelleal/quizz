@@ -42,7 +42,7 @@ function UserAccount() {
           setName(userData.name);
           setQuizzCount(userData.quizzCount);
           const totalScore = userData.quizzScores.reduce((a, b) => a + b, 0);
-          setAverageScore(totalScore / userData.quizzCount);
+          setAverageScore(Math.round(totalScore / userData.quizzCount));
         }
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -96,7 +96,6 @@ function UserAccount() {
                     className='circular-progress-bar'
                     value={averageScore}
                     text={`${averageScore}%`}
-                    id='circle-score'
                   />
                 </dd>
               </div>

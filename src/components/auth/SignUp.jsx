@@ -36,7 +36,7 @@ function SignUp() {
       return "Veuillez remplir l'adresse e-mail correctement";
     }
     if (!validatePassword(password)) {
-      return 'Le mot de passe est invalide';
+      return 'Le mot de passe est invalide : Il doit contenir entre 6 et 20 caractères';
     }
     try {
       const authInstance = getAuth();

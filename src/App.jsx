@@ -3,6 +3,7 @@ import Auth from './components/auth/Auth';
 import SignUp from './components/auth/SignUp';
 import UserAccount from './components/userAccount/UserAccount'; 
 import Quizz from './components/quizz/Quizz';
+import Error from './components/error/Error';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/userAccount" element={<UserAccount />} /> 
         <Route path="/" element={<Auth />} />
         <Route path='/quizz' element={<Quizz />} />
+        <Route path='*' element={<Error />} /> 
       </Routes>
     </Router>
   );

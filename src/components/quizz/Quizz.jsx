@@ -10,7 +10,7 @@ import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import { data } from '../../assets/data';
 import Navbar from '../../components/navbar/Navbar';
 import Button from '../button/Button';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './quizz.css';
 
@@ -153,6 +153,10 @@ function Quizz() {
             <div className='percentage-box'>
               <div className='percentage'>
                 <CircularProgressbar
+                  styles={buildStyles({
+                  textColor: '#EF4444',
+                  pathColor: `rgba(139, 0, 0, ${percentage / 100})`,
+                })}
                   value={percentage}
                   text={`${percentage}%`}
                 />
