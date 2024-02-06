@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Navbar from '../navbar/Navbar';
+import Footer from '../footer/footer';
 import './userAccount.css';
 
 function UserAccount() {
@@ -70,19 +71,32 @@ function UserAccount() {
   return (
     <>
       <Navbar />
-      <section className='bg-white'>
+      <section className='bg-white mt-12'>
         <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
           <div className='mx-auto max-w-3xl text-center'>
             <h2 className='text-3xl font-bold text-gray-900 sm:text-4xl'>
-              Bienvenue {name},
+              Bienvenue {name} !
             </h2>
             <p className='mt-4 text-gray-500 sm:text-xl'>
               Ceci est votre espace personnel. Vous y retrouverez les quiz
               disponibles et l&apos;évolution de vos scores
             </p>
           </div>
+
           <div className='mt-8 sm:mt-12'>
             <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
+              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
+                <dt className='order-last text-lg font-medium text-gray-500'>
+                  <Link to='/quizzList' className='quizz-btn'>
+                    Différents niveaux <br />
+                    <span className='underline'>Cliquez ici pour jouer</span>
+                  </Link>
+                </dt>
+                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                  Quiz
+                </dd>
+              </div>
+
               <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center'>
                 <dt className='order-last text-lg font-medium text-gray-500'>
                   Score total
@@ -99,17 +113,7 @@ function UserAccount() {
                   />
                 </dd>
               </div>
-              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
-                <dt className='order-last text-lg font-medium text-gray-500'>
-                  <Link to='/quizz' className='quizz-btn'>
-                    Niveau facile <br />
-                    <span className='underline'>Cliquez ici pour jouer</span>
-                  </Link>
-                </dt>
-                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
-                  Quiz #1
-                </dd>
-              </div>
+
               <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
                 <dt className='order-last text-lg font-medium text-gray-500'>
                   Quiz réalisé(s)
@@ -120,13 +124,18 @@ function UserAccount() {
               </div>
             </dl>
           </div>
-          <div className='flex justify-center mt-12 mb-12'>
-            <button className='underline' onClick={handleSignOut}>
+
+          <div className='flex justify-center mt-12 mb-12 cursor-pointer'>
+            <a
+              onClick={handleSignOut}
+              className='mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'
+            >
               Se déconnecter
-            </button>
+            </a>
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

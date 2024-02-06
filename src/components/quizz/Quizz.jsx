@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { db, auth } from '../../firebase/firebase.config';
 import {
@@ -7,16 +8,15 @@ import {
   browserSessionPersistence,
 } from 'firebase/auth';
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
-import { data } from '../../assets/data';
 import Navbar from '../../components/navbar/Navbar';
 import Button from '../button/Button';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './quizz.css';
 
-function Quizz() {
+function Quizz({ quizzData, title }) {
   let [index, setIndex] = useState(0);
-  const [question, setQuestion] = useState(data[index]);
+  const [question, setQuestion] = useState(quizzData[index]);
   const [lock, setLock] = useState(false);
   const [score, setScore] = useState(0);
   const [result, setResult] = useState(false);
@@ -43,7 +43,7 @@ function Quizz() {
 
   const next = async () => {
     if (lock) {
-      if (index === data.length - 1) {
+      if (index === quizzData.length - 1) {
         setResult(true);
         if (auth.currentUser) {
           const userRef = doc(db, 'users', auth.currentUser.uid);
@@ -63,7 +63,7 @@ function Quizz() {
         return 0;
       }
       setIndex((index += 1));
-      setQuestion(data[index]);
+      setQuestion(quizzData[index]);
       setLock(false);
       optionArray.forEach((option) => {
         option.current.classList.remove('wrong', 'correct');
@@ -73,14 +73,14 @@ function Quizz() {
 
   const reset = () => {
     setIndex(0);
-    setQuestion(data[0]);
+    setQuestion(quizzData[0]);
     setScore(0);
     setLock(false);
     setResult(false);
   };
 
   const calculateSuccessPercentage = () => {
-    return Math.round((score / data.length) * 100);
+    return Math.round((score / quizzData.length) * 100);
   };
 
   const percentage = calculateSuccessPercentage();
@@ -104,7 +104,7 @@ function Quizz() {
       <Navbar />
       <div className='container'>
         <div className='title'>
-          <h1>Quiz #1 - Gestes de secours</h1>
+          <h1>{title}</h1>
           <div className='loader'></div>
         </div>
         {result ? (
@@ -144,7 +144,7 @@ function Quizz() {
               <Button buttonText='Suivant' handleClick={next} />
             </div>
             <div className='index'>
-              {index + 1} sur {data.length} questions
+              {index + 1} sur {quizzData.length} questions
             </div>
           </>
         )}
@@ -154,9 +154,9 @@ function Quizz() {
               <div className='percentage'>
                 <CircularProgressbar
                   styles={buildStyles({
-                  textColor: '#EF4444',
-                  pathColor: `rgba(139, 0, 0, ${percentage / 100})`,
-                })}
+                    textColor: '#EF4444',
+                    pathColor: `rgba(139, 0, 0, ${percentage / 100})`,
+                  })}
                   value={percentage}
                   text={`${percentage}%`}
                 />
@@ -202,5 +202,18 @@ function Quizz() {
     </>
   );
 }
+
+Quizz.propTypes = {
+  quizzData: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string.isRequired,
+      option1: PropTypes.string.isRequired,
+      option2: PropTypes.string.isRequired,
+      option3: PropTypes.string.isRequired,
+      answer: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default Quizz;
