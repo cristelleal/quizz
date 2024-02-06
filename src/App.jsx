@@ -16,8 +16,8 @@ function App() {
         <Route path="/userAccount" element={<UserAccount />} /> 
         <Route path="/" element={<Auth />} />
         <Route path='quizzList' element={<QuizzList />} />
-        <Route path='/quizz' element={<Quizz quizzData={data} title='Quiz #1' />} />
-        <Route path='/quizz2' element={<Quizz quizzData={data2} title='Quiz #2' />} />
+        <Route path='/quizz' element={<Quizz quizzData={data} title='Quiz numéro 1' />} />
+        <Route path='/quizz2' element={<Quizz quizzData={data2} title='Quiz numéro 2' />} />
         <Route path='*' element={<Error />} /> 
       </Routes>
     </Router>

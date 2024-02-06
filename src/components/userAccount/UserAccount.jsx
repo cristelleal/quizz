@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Navbar from '../navbar/Navbar';
-import Footer from '../footer/footer';
+import Footer from '../footer/Footer';
 import './userAccount.css';
 
 function UserAccount() {
