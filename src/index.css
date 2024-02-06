@@ -9,8 +9,12 @@
 }
 
 body {
-    font-family: var(--typography-typeface);
+    font-family: var(--typography-content);
     background-color: var(--color-n-light-blue);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--typography-typeface);
 }
 
 html, body, #app {

@@ -18,7 +18,7 @@ function Form({ handleFormSubmit, setFormErrorMessage, buttonText }) {
   };
 
   return (
-    <form className='mt-8 grid grid-cols-6 gap-6 py-12 px-12'>
+    <form>
       <div className='col-span-6 sm:col-span-3'>
           <label
             htmlFor='Email'
