@@ -104,7 +104,7 @@ function UserAccount() {
                 <dt className='order-last text-lg font-medium text-gray-500'>
                   <Link to='/quizz' className='quizz-btn'>
                     Niveau facile <br />
-                    <span className='underline'>Clique ici pour jouer</span>
+                    <span className='underline'>Cliquez ici pour jouer</span>
                   </Link>
                 </dt>
                 <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>

@@ -1,9 +1,15 @@
 import { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { db, auth } from '../../firebase/firebase.config';
-import { getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
+import {
+  getAuth,
+  setPersistence,
+  browserSessionPersistence,
+} from 'firebase/auth';
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import { data } from '../../assets/data';
 import Navbar from '../../components/navbar/Navbar';
+import Button from '../button/Button';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './quizz.css';
@@ -44,9 +50,9 @@ function Quizz() {
           try {
             await setDoc(
               userRef,
-              { 
+              {
                 quizzCount: increment(1),
-                quizzScores: arrayUnion(percentage) 
+                quizzScores: arrayUnion(percentage),
               },
               { merge: true }
             );
@@ -96,10 +102,10 @@ function Quizz() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <div className="title">
-          <h1>Quizz - Gestes de secours</h1>
-          <div className="loader"></div>
+      <div className='container'>
+        <div className='title'>
+          <h1>Quiz #1 - Gestes de secours</h1>
+          <div className='loader'></div>
         </div>
         {result ? (
           <></>
@@ -134,22 +140,18 @@ function Quizz() {
                 {question.option3}
               </li>
             </ul>
-            <button onClick={next} className="next-btn">
-              <span>Suivant</span>
-              <svg width="15px" height="10px" viewBox="0 0 13 10">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-              </svg>
-            </button>
-            <div className="index">
+            <div className='flex justify-center'>
+              <Button buttonText='Suivant' handleClick={next} />
+            </div>
+            <div className='index'>
               {index + 1} sur {data.length} questions
             </div>
           </>
         )}
         {result ? (
           <>
-            <div className="percentage-box">
-              <div className="percentage">
+            <div className='percentage-box'>
+              <div className='percentage'>
                 <CircularProgressbar
                   value={percentage}
                   text={`${percentage}%`}
@@ -157,34 +159,37 @@ function Quizz() {
               </div>
             </div>
             {isScoreAboveHalf ? (
-              <div className="result-container">
-                <p className="score-infos">
+              <div className='result-container'>
+                <p className='score-infos'>
                   Félicitations ! Excellent score, continuez comme ça !
                 </p>
               </div>
             ) : (
-              <div className="result-container">
-                <p className="score-infos">
+              <div className='result-container'>
+                <p className='score-infos'>
                   Vous avez obtenu un score inférieur à la moyenne.
                   <br />
                   <a
-                    className="link"
-                    href="https://www.croix-rouge.fr/les-gestes-de-premiers-secours"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className='link'
+                    href='https://www.croix-rouge.fr/les-gestes-de-premiers-secours'
+                    target='_blank'
+                    rel='noopener noreferrer'
                   >
                     🔗 Se renseigner sur les gestes de premiers secours
                   </a>
                 </p>
               </div>
             )}
-            <button onClick={reset} className="next-btn">
-              <span>Recommencer</span>
-              <svg width="15px" height="10px" viewBox="0 0 13 10">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-              </svg>
-            </button>
+            <div className='flex justify-center'>
+              <Button buttonText='Recommencer' handleClick={reset} />
+            </div>
+            <Link to='/useraccount'>
+              <p className='text-sm text-gray-500 text-center sm:mt-4'>
+                <span className='text-gray-700 underline'>
+                  Espace personnel
+                </span>
+              </p>
+            </Link>
           </>
         ) : (
           <></>

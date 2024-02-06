@@ -75,24 +75,24 @@
 }
 
 .container {
+  margin-top: 2%;
   height: auto;
   width: 50%;
   margin: auto;
   background-color: var(--color-n-white);
-  color: var(--color-n-dark);
   display: flex;
   flex-direction: column;
   gap: 20px;
   border-radius: 10px;
   padding: 3% 4%;
-  box-shadow: var(--box-shadow-0);
 }
 
 .container h2 {
-  font-family: var(--typography-content);
+  font-family: var(--typography-h1);
   margin: 4% 0 0 0;
-  font-size: medium;
-  background-color: var(--color-n-light-purple);
+  font-size: large;
+  font-weight: bold;
+  background-color: #95949418;
   padding: 5%;
   border-radius: 8px;
 }
@@ -112,9 +112,8 @@
 }
 
 ul li:hover {
-  background-color: var(--color-n-light-blue);
-  border: 1px solid var(--color-n-purple);
-  outline: 1px solid var(--color-n-purple);
+  border: 1px solid #ef4444bd;
+  outline: 1px solid #ef4444bd;
 }
 
 .title {
@@ -125,21 +124,13 @@ ul li:hover {
 }
 
 .title h1 {
-  margin-left: 20%;
-  font-size: x-large;
+  font-family: var(--typography-h1);
+  color: var(--color-n-dark);
   font-weight: 300;
-  letter-spacing: 1px;
+  margin-left: 20%;
+  font-size: xx-large;
   text-transform: uppercase;
   white-space: wrap;
-}
-
-.title h1:before {
-  background-color: var(--color-orange);
-  content: '';
-  display: block;
-  height: 3px;
-  width: 75px;
-  margin-bottom: 5px;
 }
 
 .index {
@@ -201,65 +192,9 @@ ul li:hover {
   color: var(--color-n-dark);
 }
 
-.next-btn {
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.next-btn:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: var(--color-n-light-blue);
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
-}
-
-.next-btn span {
-  position: relative;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--color-n-strong-blue);
-}
-
-.next-btn svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: var(--color-n-strong-blue);
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
-}
-
-.next-btn:hover:before {
-  width: 100%;
-  background: var(--color-n-light-blue);
-}
-
-.next-btn:hover svg {
-  transform: translateX(0);
-}
-
-.next-btn:active {
-  transform: scale(0.95);
-}
-
 @media only screen and (max-width: 767px) {
   .container {
+    margin-top: 5%;
     height: auto;
     width: 80%;
     gap: 20px;
@@ -283,18 +218,5 @@ ul li:hover {
   .container ul li {
     font-size: 14px;
     height: 70px;
-  }
-
-  .next-btn {
-    padding: 10px 16px;
-  }
-
-  .next-btn:before {
-    width: 35px;
-    height: 35px;
-  }
-
-  .next-btn span {
-    font-size: 14px;
   }
 }

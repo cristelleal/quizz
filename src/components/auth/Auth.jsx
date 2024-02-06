@@ -8,7 +8,6 @@ import handleFirebaseError from '../../firebase/handleFirebaseError';
 import { validateEmail, validatePassword } from '../../utils/utils';
 import { Link, useNavigate } from 'react-router-dom';
 import Form from '../form/Form';
-import Navbar from '../navbar/Navbar';
 import backgroundImage from '../../assets/ambulance.jpg';
 
 function Auth() {
@@ -34,7 +33,6 @@ function Auth() {
 
   return (
     <>
-      <Navbar />
       <section className='bg-white'>
         <div className='lg:grid lg:min-h-screen lg:grid-cols-12'>
           <section className='relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6'>
@@ -49,8 +47,8 @@ function Auth() {
               </h2>
               <p className='mt-4 leading-relaxed text-white/90'>
                 Face aux urgences quotidiennes, les gestes de secours peuvent
-                sauver des vies. Savez-vous comment agir, comment rassurer la victime et
-                qui contacter ?
+                sauver des vies. Savez-vous comment agir, comment rassurer la
+                victime et qui contacter ?
               </p>
             </div>
           </section>
@@ -62,22 +60,22 @@ function Auth() {
                 </h1>
                 <p className='mt-8 leading-relaxed text-gray-500 mb-12'>
                   Face aux urgences quotidiennes, les gestes de secours peuvent
-                  sauver des vies. Savez-vous comment agir, comment rassurer la victime
-                  et qui contacter ?
+                  sauver des vies. Savez-vous comment agir, comment rassurer la
+                  victime et qui contacter ?
                 </p>
               </div>
-                <Form
-                  handleFormSubmit={handleSignIn}
-                  setFormErrorMessage={errorMessage}
-                  buttonText='Se connecter'
-                />
-                <Link to='/signup'>
-                  <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
-                    <span className='text-gray-700 underline'>
-                      Créér un compte
-                    </span>
-                  </p>
-                </Link>
+              <Form
+                handleFormSubmit={handleSignIn}
+                setFormErrorMessage={errorMessage}
+                buttonText='Se connecter'
+              />
+              <Link to='/signup'>
+                <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
+                  <span className='text-gray-700 underline'>
+                    Créér un compte
+                  </span>
+                </p>
+              </Link>
             </div>
           </main>
         </div>

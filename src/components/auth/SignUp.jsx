@@ -14,7 +14,7 @@ import {
   validateEmail,
   validatePassword,
 } from '../../utils/utils';
-import Navbar from '../navbar/Navbar';
+import { Link } from 'react-router-dom';
 import Form from '../form/Form';
 import Input from '../input/Input';
 import backgroundImage from '../../assets/rescue.jpg';
@@ -77,7 +77,6 @@ function SignUp() {
 
   return (
     <>
-      <Navbar />
       <section className='bg-white'>
         <div className='lg:grid lg:min-h-screen lg:grid-cols-12'>
           <section className='relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6'>
@@ -93,7 +92,8 @@ function SignUp() {
               </h2>
 
               <p className='mt-4 leading-relaxed text-white/90'>
-                Créez votre compte afin de tester vos connaissances et d&apos;accéder à vos scores
+                Créez votre compte afin de tester vos connaissances et
+                d&apos;accéder à vos scores
               </p>
             </div>
           </section>
@@ -106,26 +106,34 @@ function SignUp() {
                 </h1>
 
                 <p className='mt-8 leading-relaxed text-gray-500 mb-12'>
-                Créez votre compte afin de tester vos connaissances et d&apos;accéder à vos scores
+                  Créez votre compte afin de tester vos connaissances et
+                  d&apos;accéder à vos scores
                 </p>
-                </div>
-                <label
-                  htmlFor='Name'
-                  className='block text-sm font-medium text-gray-700'
-                >
-                  Pseudo
-                </label>
-                  <Input
-                    type='text'
-                    placeholder=''
-                    value={name}
-                    onChange={handleNameChange}
-                  />
-                  <Form
-                    handleFormSubmit={handleSignUp}
-                    setFormErrorMessage={errorMessage}
-                    buttonText='Valider'
-                  />
+              </div>
+              <label
+                htmlFor='Name'
+                className='block text-sm font-medium text-gray-700'
+              >
+                Pseudo
+              </label>
+              <Input
+                type='text'
+                placeholder=''
+                value={name}
+                onChange={handleNameChange}
+              />
+              <Form
+                handleFormSubmit={handleSignUp}
+                setFormErrorMessage={errorMessage}
+                buttonText='Valider'
+              />
+              <Link to='/'>
+                <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
+                  <span className='text-gray-700 underline mr-4'>
+                    S&apos;authentifier
+                  </span>
+                </p>
+              </Link>
             </div>
           </main>
         </div>
