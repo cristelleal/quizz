@@ -126,7 +126,7 @@ ul li:hover {
 .title h1 {
   font-family: var(--typography-h1);
   color: var(--color-n-dark);
-  font-weight: 300;
+  font-weight: 600;
   margin-left: 20%;
   font-size: xx-large;
   text-transform: uppercase;

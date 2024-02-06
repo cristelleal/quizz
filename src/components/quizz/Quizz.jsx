@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth';
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../footer/Footer'
 import Button from '../button/Button';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -102,6 +103,7 @@ function Quizz({ quizzData, title }) {
   return (
     <>
       <Navbar />
+      <div className='p-4'></div>
       <div className='container'>
         <div className='title'>
           <h1>{title}</h1>
@@ -198,6 +200,11 @@ function Quizz({ quizzData, title }) {
         ) : (
           <></>
         )}
+      </div>
+      <div className='p-4'>
+      </div>
+      <div className='fixed bottom-0 w-full'>
+        <Footer />
       </div>
     </>
   );

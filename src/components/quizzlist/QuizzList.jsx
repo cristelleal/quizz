@@ -1,10 +1,11 @@
 import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 function QuizzList() {
   return (
     <>
       <Navbar />
-      <section className='bg-white mt-12'>
+      <section className='bg-white mt-12 mb-12 w-full'>
         <div className='max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16'>
           <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
             <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
@@ -15,8 +16,8 @@ function QuizzList() {
               <p className='mt-4 text-gray-600'>
                 Bienvenue sur notre plateforme de secourisme interactive !
                 <br />
-                Testez vos connaissances à travers nos quiz variés, adaptés à tous
-                les niveaux. Suivez votre progression dans votre espace
+                Testez vos connaissances à travers nos quiz variés, adaptés à
+                tous les niveaux. Suivez votre progression dans votre espace
                 personnel. Prêt à devenir un expert des gestes qui sauvent ?
                 Lancez-vous !
               </p>
@@ -64,7 +65,7 @@ function QuizzList() {
 
               <a
                 className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'
-                href='/quizz1'
+                href='/quizz2'
               >
                 <span className='inline-block rounded-lg bg-gray-50 p-3'>
                   <svg
@@ -121,12 +122,17 @@ function QuizzList() {
 
                 <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                   Bientôt disponible
+                  <br />
+                  Niveau : moyen
                 </p>
               </a>
             </div>
           </div>
         </div>
       </section>
+      <div className='fixed bottom-0 w-full'>
+        <Footer />
+      </div>
     </>
   );
 }
