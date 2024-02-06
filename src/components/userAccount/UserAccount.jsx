@@ -85,7 +85,7 @@ function UserAccount() {
             <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
               <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center'>
                 <dt className='order-last text-lg font-medium text-gray-500'>
-                  Total score
+                  Score total
                 </dt>
                 <dd className='text-4xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
                   <CircularProgressbar
