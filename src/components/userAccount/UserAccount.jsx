@@ -58,10 +58,7 @@ function UserAccount() {
         await setPersistence(authInstance, browserSessionPersistence);
         await fetchUserData();
       } catch (error) {
-        console.error(
-          'Erreur lors de la configuration de la persistance ou fetching user data:',
-          error
-        );
+        console.error('Error persistance user data:', error);
       }
     };
 
