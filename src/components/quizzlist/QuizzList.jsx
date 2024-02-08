@@ -1,5 +1,5 @@
 import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
+import Footer from '../../components/footer/Footer';
 import AuthChecker from '../authChecker/authChecker';
 
 function QuizzList() {
