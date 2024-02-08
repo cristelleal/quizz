@@ -9,7 +9,7 @@ import {
 } from 'firebase/auth';
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import Navbar from '../../components/navbar/Navbar';
-import Footer from '../footer/Footer';
+import Footer from '../../components/footer/Footer';
 import Button from '../button/Button';
 import AuthChecker from '../authChecker/authChecker';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
