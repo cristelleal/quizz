@@ -1,6 +1,7 @@
 import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
+import { Link } from 'react-router-dom';
 
 function QuizzList() {
   return (
@@ -23,13 +24,13 @@ function QuizzList() {
                   personnel. Prêt à devenir un expert des gestes qui sauvent ?
                   Lancez-vous !
                 </p>
-
+                <Link to='/useraccount'>
                 <a
-                  href='/useraccount'
                   className='mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'
                 >
                   Espace personnel
                 </a>
+                </Link>
               </div>
 
               <div className='grid grid-cols-2 gap-4 sm:grid-cols-3'>
