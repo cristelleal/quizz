@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/userAccount" element={<UserAccount />} /> 
+        <Route path="/useraccount" element={<UserAccount />} /> 
         <Route path="/" element={<Auth />} />
         <Route path='quizzList' element={<QuizzList />} />
         <Route path='/quizz' element={<Quizz quizzData={data} title='Quiz numéro 1' />} />
