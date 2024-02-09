@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Navbar from '../navbar/Navbar';
-import Footer from '../../components/footer/Footer';
+import FooterElement from '../footerElement/FooterElement';
 import './userAccount.css';
 
 function UserAccount() {
@@ -132,7 +132,7 @@ function UserAccount() {
           </div>
         </div>
       </section>
-      <Footer />
+      <FooterElement />
     </>
   );
 }

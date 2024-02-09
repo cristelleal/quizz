@@ -1,5 +1,5 @@
 import Navbar from '../navbar/Navbar';
-import Footer from '../../components/footer/Footer';
+import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
 
 function QuizzList() {
@@ -133,7 +133,7 @@ function QuizzList() {
           </div>
         </section>
         <div className='fixed bottom-0 w-full'>
-          <Footer />
+          <FooterElement />
         </div>
       </AuthChecker>
     </>

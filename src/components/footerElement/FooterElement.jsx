@@ -1,4 +1,4 @@
-function Footer() {
+function FooterElement() {
   const date = new Date();
   let year = date.getFullYear();
 
@@ -39,4 +39,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterElement;
