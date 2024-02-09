@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase.config';
 
@@ -22,7 +22,8 @@ function Navbar() {
     <>
       <header className='bg-white'>
         <div className='mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8'>
-          <a className='block text-red-500' href='/quizzlist'>
+          <Link to='/quizzlist'>
+          <a className='block text-red-500'>
             <span className='sr-only'>Home</span>
             <svg
               width='40'
@@ -37,6 +38,7 @@ function Navbar() {
               />
             </svg>
           </a>
+          </Link>
           <div className='flex flex-1 items-center justify-end md:justify-between'>
             <nav aria-label='Global' className='hidden md:block'></nav>
             <div className='flex items-center gap-4'>
