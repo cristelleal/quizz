@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import backgroundImage from '../../assets/health.jpg';
+import backgroundImage from '../../assets/img/health.webp';
 
 function Error() {
   return (

@@ -17,7 +17,7 @@ import {
 import { Link } from 'react-router-dom';
 import Form from '../form/Form';
 import Input from '../input/Input';
-import backgroundImage from '../../assets/rescue.jpg';
+import backgroundImage from '../../assets/img/rescue.webp';
 
 function SignUp() {
   const [name, setName] = useState('');
@@ -87,13 +87,13 @@ function SignUp() {
             />
 
             <div className='hidden lg:relative lg:block lg:p-12 lg:mb-8'>
-              <h2 className='mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl'>
-                QUIZ - GESTES DE SECOURS
+              <h2 className='mt-6 text-4xl font-black text-white text-center'>
+                RESCUE QUIZ
               </h2>
 
               <p className='mt-4 leading-relaxed text-white/90'>
-                Créez votre compte afin de tester vos connaissances et
-                d&apos;accéder à vos scores
+                Bienvenue ! Créez votre compte afin de tester vos connaissances en gestes de secours et
+                d&apos;accéder à vos scores personnels. 
               </p>
             </div>
           </section>
@@ -101,13 +101,13 @@ function SignUp() {
           <main className='flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6'>
             <div className='max-w-xl lg:max-w-3xl'>
               <div className='relative -mt-16 block lg:hidden'>
-                <h1 className='mt-16 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl'>
-                  QUIZ - GESTES DE SECOURS
+                <h1 className='mt-0 text-4xl font-extrabold text-white'>
+                  RESCUE QUIZ
                 </h1>
 
                 <p className='mt-8 leading-relaxed text-gray-500 mb-12'>
-                  Créez votre compte afin de tester vos connaissances et
-                  d&apos;accéder à vos scores
+                Bienvenue ! Créez votre compte afin de tester vos connaissances en gestes de secours et
+                d&apos;accéder à vos scores personnels. 
                 </p>
               </div>
               <label

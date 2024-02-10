@@ -31,7 +31,7 @@ function FooterElement() {
           </div>
 
           <p className='mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right'>
-            CA &copy; {year}. All rights reserved.
+            CA &copy; {year}. Tous droits réservés.
           </p>
         </div>
       </div>

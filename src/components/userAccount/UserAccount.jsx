@@ -13,6 +13,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
+import AuthChecker from '../authChecker/authChecker';
 import './userAccount.css';
 
 function UserAccount() {
@@ -67,16 +68,17 @@ function UserAccount() {
 
   return (
     <>
+      <AuthChecker>
       <Navbar />
       <section className='bg-white mt-12'>
         <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
           <div className='mx-auto max-w-3xl text-center'>
             <h2 className='text-3xl font-bold text-gray-900 sm:text-4xl'>
-              Bienvenue {name} !
+              Bienvenue {name},
             </h2>
             <p className='mt-4 text-gray-500 sm:text-xl'>
               Ceci est votre espace personnel. Vous y retrouverez les quiz
-              disponibles et l&apos;évolution de vos scores
+              disponibles et l&apos;évolution de vos scores. 
             </p>
           </div>
 
@@ -85,7 +87,6 @@ function UserAccount() {
               <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
                 <dt className='order-last text-lg font-medium text-gray-500'>
                   <Link to='/quizzList' className='quizz-btn'>
-                    Différents niveaux <br />
                     <span className='underline'>Cliquez ici pour jouer</span>
                   </Link>
                 </dt>
@@ -133,6 +134,7 @@ function UserAccount() {
         </div>
       </section>
       <FooterElement />
+      </AuthChecker>
     </>
   );
 }
