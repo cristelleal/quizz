@@ -25,4 +25,4 @@ export function formatQuizCount(quizCount) {
 }
 
 const date = new Date();
-export let year = date.getFullYear();
+export let currentYear = date.getFullYear();

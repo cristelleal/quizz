@@ -1,9 +1,9 @@
-import { year } from "../../utils/utils";
+import { currentYear } from "../../utils/utils";
 
 function FooterElement() {
 
   return (
-    <footer className='sm:absolute bottom-0 bg-red-50 w-full'>
+    <footer className='bottom-0 bg-red-50 w-full'>
       <div className='mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8'>
         <div className='sm:flex sm:items-center sm:justify-between'>
           <div className='flex justify-center text-gray-400 sm:justify-start'>
@@ -24,7 +24,7 @@ function FooterElement() {
           </div>
 
           <p className='mt-4 text-center text-sm text-gray-400 lg:mt-0 lg:text-right'>
-            Rescue Quiz &copy; {year}. Tous droits réservés.
+            Rescue Quiz &copy; {currentYear}. Tous droits réservés.
           </p>
         </div>
       </div>
