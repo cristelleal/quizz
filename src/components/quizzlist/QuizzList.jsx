@@ -129,7 +129,7 @@ function QuizzList() {
         </section>
         <img
           src={backgroundImage}
-          alt='ambulance'
+          alt='rescue kit'
           className='h-fit-content w-full object-cover opacity-80'
         />
         <div className='bottom-0 w-full'>
