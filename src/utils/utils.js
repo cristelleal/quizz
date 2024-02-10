@@ -14,4 +14,14 @@ export function validatePassword(password) {
   return passwordReg.test(password);
 }
 
+export function formatQuizCount(quizCount) {
+  if (quizCount === 0) {
+    return "Aucun quiz réalisé";
+  } else if (quizCount === 1) {
+    return "1 quiz réalisé";
+  } else {
+    return `${quizCount} quiz réalisés`;
+  }
+}
+
 

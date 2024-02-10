@@ -95,7 +95,7 @@
 
 .container h2 {
   font-family: var(--typography-h1);
-  margin: 4% 0 0 0;
+  margin: 2% 0 0 0;
   font-size: large;
   color: var(--color-n-dark);
   background-color: #95949410;
@@ -119,8 +119,9 @@
 }
 
 ul li:hover {
-  border: 1px solid #ef4444bd;
-  outline: 1px solid #ef4444bd;
+  background: #ef44441a;
+  outline: .5px solid #ef44441a;
+  border: 1px solid #ef44441a;
 }
 
 .title {

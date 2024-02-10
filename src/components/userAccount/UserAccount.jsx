@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { formatQuizCount } from '../../utils/utils';
 import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
@@ -69,72 +70,79 @@ function UserAccount() {
   return (
     <>
       <AuthChecker>
-      <Navbar />
-      <section className='bg-white mt-12'>
-        <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
-          <div className='mx-auto max-w-3xl text-center'>
-            <h2 className='text-3xl font-bold text-gray-900 sm:text-4xl'>
-              Bienvenue {name},
-            </h2>
-            <p className='mt-4 text-gray-500 sm:text-xl'>
-              Ceci est votre espace personnel. Vous y retrouverez les quiz
-              disponibles et l&apos;évolution de vos scores. 
-            </p>
+        <Navbar />
+        <section className='bg-white mt-12'>
+          <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
+            <div className='mx-auto max-w-3xl text-center'>
+              <h2 className='text-3xl font-bold text-gray-900 sm:text-4xl'>
+                Bienvenue {name},
+              </h2>
+              <p className='mt-4 text-gray-500 sm:text-xl'>
+                Ceci est votre espace personnel. Vous y retrouverez les quiz
+                disponibles et l&apos;évolution de vos scores.
+              </p>
+            </div>
+
+            <div className='mt-8 sm:mt-12'>
+              <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
+                <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
+                  <dt className='order-last text-lg font-medium text-gray-500'>
+                    <Link to='/quizzList' className='quizz-btn'>
+                      <span className='underline'>Cliquez ici pour jouer</span>
+                    </Link>
+                  </dt>
+                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                    Quiz
+                  </dd>
+                </div>
+
+                <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center'>
+                  <dt className='order-last text-lg font-medium text-gray-500'>
+                    Score total
+                  </dt>
+                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
+                    <CircularProgressbar
+                      styles={buildStyles({
+                        transition: 'stroke-dashoffset 0.5s ease 0s',
+                        textColor: '#EF4444',
+                        pathColor: `#EF4444`,
+                      })}
+                      className='circular-progress-bar'
+                      value={averageScore}
+                      text={`${averageScore}%`}
+                    />
+                  </dd>
+                </div>
+
+                <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
+                  <dt className='order-last text-lg font-medium text-gray-500'>
+                  {formatQuizCount(quizzCount)}
+                  </dt>
+                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                    {quizzCount}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className='flex justify-center mt-12 mb-12 cursor-pointer'>
+              <a
+                onClick={handleSignOut}
+                className='mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'
+              >
+                Se déconnecter
+              </a>
+            </div>
           </div>
-
-          <div className='mt-8 sm:mt-12'>
-            <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
-              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
-                <dt className='order-last text-lg font-medium text-gray-500'>
-                  <Link to='/quizzList' className='quizz-btn'>
-                    <span className='underline'>Cliquez ici pour jouer</span>
-                  </Link>
-                </dt>
-                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
-                  Quiz
-                </dd>
-              </div>
-
-              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center'>
-                <dt className='order-last text-lg font-medium text-gray-500'>
-                  Score total
-                </dt>
-                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
-                  <CircularProgressbar
-                    styles={buildStyles({
-                      transition: 'stroke-dashoffset 0.5s ease 0s',
-                      textColor: '#EF4444',
-                      pathColor: `#EF4444`,
-                    })}
-                    className='circular-progress-bar'
-                    value={averageScore}
-                    text={`${averageScore}%`}
-                  />
-                </dd>
-              </div>
-
-              <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
-                <dt className='order-last text-lg font-medium text-gray-500'>
-                  Quiz réalisé(s)
-                </dt>
-                <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
-                  {quizzCount}
-                </dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className='flex justify-center mt-12 mb-12 cursor-pointer'>
-            <a
-              onClick={handleSignOut}
-              className='mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'
-            >
-              Se déconnecter
-            </a>
-          </div>
-        </div>
-      </section>
-      <FooterElement />
+        </section>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path
+            fill='#FEF2F2'
+            fillOpacity='1'
+            d='M0,160L60,144C120,128,240,96,360,85.3C480,75,600,85,720,112C840,139,960,181,1080,181.3C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'
+          ></path>
+        </svg>
+        <FooterElement />
       </AuthChecker>
     </>
   );
