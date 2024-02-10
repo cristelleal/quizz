@@ -23,7 +23,7 @@ function Navbar() {
       <header className='bg-white shadow-md'>
         <div className='mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8'>
           <Link to='/quizzlist'>
-            <a className='block text-red-500'>
+            <div className='block text-red-500'>
               <span className='sr-only'>Home</span>
               <svg
                 width='40'
@@ -41,18 +41,18 @@ function Navbar() {
                   fill='currentColor'
                 />
               </svg>
-            </a>
+            </div>
           </Link>
           <div className='flex flex-1 items-center justify-end md:justify-between'>
             <nav aria-label='Global' className='hidden md:block'></nav>
             <div className='flex items-center gap-4'>
               <div className='sm:flex sm:gap-4'>
-                <a
+                <div
                   className='block rounded-md bg-red-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-red-600 cursor-pointer'
                   onClick={handleClick}
                 >
                   Mon compte
-                </a>
+                </div>
               </div>
             </div>
           </div>

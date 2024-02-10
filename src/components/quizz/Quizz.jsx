@@ -206,9 +206,7 @@ function Quizz({ quizzData, title }) {
             )}
           </div>
         </main>
-        <div className='absolute bottom-0 w-full'>
-          <FooterElement />
-        </div>
+        <FooterElement />
       </AuthChecker>
     </>
   );
