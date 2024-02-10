@@ -88,8 +88,8 @@ function UserAccount() {
               <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
                 <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
                   <dt className='order-last text-lg font-medium text-gray-500'>
-                    <Link to='/quizzList' className='quizz-btn'>
-                      <span className='underline'>Cliquez ici pour jouer</span>
+                    <Link to='/quizzList'>
+                      <button className='underline'>Accéder aux quiz</button>
                     </Link>
                   </dt>
                   <dd className='text-3xl font-extrabold text-red-500 md:text-5xl'>
