@@ -13,7 +13,7 @@ export const data = [
     question:
       "Lors d'un accident un motard casqué (intégral) est allongé, il ne répond pas et il ne réagit pas.",
     option1:
-      'Avant toute chose je lève délicatement sa visière et je pose ma main sur son ventre pour évaluer sa respiration',
+      'Je lève délicatement sa visière et je pose ma main sur son ventre pour évaluer sa respiration',
     option2: 'Surtout je ne le touche pas en attendant les secours spécialisés',
     option3: 'Je le bascule délicatement en position latérale de sécurité',
     answer: 1,

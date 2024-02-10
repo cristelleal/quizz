@@ -102,8 +102,9 @@ function UserAccount() {
                 <dd className='text-4xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
                   <CircularProgressbar
                     styles={buildStyles({
+                      transition: 'stroke-dashoffset 0.5s ease 0s',
                       textColor: '#EF4444',
-                      pathColor: `rgba(139, 0, 0, ${averageScore / 100})`,
+                      pathColor: `#EF4444`,
                     })}
                     className='circular-progress-bar'
                     value={averageScore}

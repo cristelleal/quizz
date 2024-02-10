@@ -158,8 +158,9 @@ function Quizz({ quizzData, title }) {
                 <div className='percentage'>
                   <CircularProgressbar
                     styles={buildStyles({
+                      transition: 'stroke-dashoffset 0.5s ease 0s',
                       textColor: '#EF4444',
-                      pathColor: `rgba(139, 0, 0, ${percentage / 100})`,
+                      pathColor: `#EF4444`,
                     })}
                     value={percentage}
                     text={`${percentage}%`}

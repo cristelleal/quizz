@@ -76,8 +76,7 @@
 
 .container {
   margin-top: 2%;
-  height: auto;
-  width: 50%;
+  max-width: 30%;
   margin: auto;
   background-color: var(--color-n-white);
   display: flex;
@@ -85,6 +84,7 @@
   gap: 20px;
   border-radius: 10px;
   padding: 3% 4%;
+  box-shadow: var(--box-shadow-0);
 }
 
 .container h2 {
@@ -182,14 +182,6 @@ ul li:hover {
   font-size: small;
   color: var(--color-n-dark);
   text-decoration: underline;
-}
-
-.account {
-  font-size: small;
-  border: none;
-  background-color: transparent;
-  text-decoration: underline;
-  color: var(--color-n-dark);
 }
 
 @media only screen and (max-width: 767px) {

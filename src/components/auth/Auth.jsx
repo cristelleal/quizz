@@ -46,7 +46,7 @@ function Auth() {
                 RESCUE QUIZ
               </h2>
               <p className='mt-4 leading-relaxed text-white/90'>
-              Explorez le secourisme avec des quiz interactifs. 
+              Bienvenue sur votre plateforme de secourisme interactive !
               Relevez le défi : connectez-vous et apprenez en vous amusant. 
               Prêt à commencer ?              
               </p>

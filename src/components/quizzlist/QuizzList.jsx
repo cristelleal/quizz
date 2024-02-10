@@ -14,13 +14,13 @@ function QuizzList() {
             <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
               <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
                 <h2 className='text-3xl font-bold sm:text-4xl'>
-                  Rescue Skills
+                  Rescue Quiz
                 </h2>
 
                 <p className='mt-4 text-gray-600'>
-                  Bienvenue sur notre plateforme de secourisme interactive !
+                  Bienvenue sur votre plateforme de secourisme interactive !
                   <br />
-                  Testez vos connaissances à travers nos quiz variés, adaptés à
+                  Testez vos connaissances à travers des quiz variés, adaptés à
                   tous les niveaux. Suivez votre progression dans votre espace
                   personnel. Prêt à devenir un expert des gestes qui sauvent ?
                   Lancez-vous !
@@ -57,7 +57,7 @@ function QuizzList() {
                     <h2 className='mt-2 font-bold'>Quiz #1</h2>
 
                     <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
-                      14 questions
+                      <b>14 questions</b>
                       <br />
                       Niveau : facile
                     </p>
@@ -88,7 +88,7 @@ function QuizzList() {
                     <h2 className='mt-2 font-bold'>Quiz #2</h2>
 
                     <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
-                      8 questions
+                      <b>8 questions</b>
                       <br />
                       Niveau : facile
                     </p>
@@ -126,8 +126,8 @@ function QuizzList() {
               </div>
             </div>
           </div>
-          <img src={backgroundImage} alt="ambulance" className='h-fit-content w-full object-cover opacity-80'/>
         </section>
+          <img src={backgroundImage} alt="ambulance" className='h-fit-content w-full object-cover opacity-80'/>
         <div className='bottom-0 w-full'>
           <FooterElement />
         </div>
