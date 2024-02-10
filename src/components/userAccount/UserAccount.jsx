@@ -15,6 +15,7 @@ import { formatQuizCount } from '../../utils/utils';
 import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
+import Wave from '../wave/Wave';
 import './userAccount.css';
 
 function UserAccount() {
@@ -116,7 +117,7 @@ function UserAccount() {
 
                 <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
                   <dt className='order-last text-lg font-medium text-gray-500'>
-                  {formatQuizCount(quizzCount)}
+                    {formatQuizCount(quizzCount)}
                   </dt>
                   <dd className='text-3xl font-extrabold text-red-500 md:text-5xl'>
                     {quizzCount}
@@ -135,13 +136,7 @@ function UserAccount() {
             </div>
           </div>
         </section>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' className='sm:bottom-6 sm:absolute'>
-          <path
-            fill='#FEF2F2'
-            fillOpacity='1'
-            d='M0,160L60,144C120,128,240,96,360,85.3C480,75,600,85,720,112C840,139,960,181,1080,181.3C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'
-          ></path>
-        </svg>
+        <Wave />
         <FooterElement />
       </AuthChecker>
     </>
