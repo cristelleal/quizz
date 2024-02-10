@@ -16,12 +16,13 @@ export function validatePassword(password) {
 
 export function formatQuizCount(quizCount) {
   if (quizCount === 0) {
-    return "Aucun quiz réalisé";
+    return 'Aucun quiz réalisé';
   } else if (quizCount === 1) {
-    return "1 quiz réalisé";
+    return '1 quiz réalisé';
   } else {
     return `${quizCount} quiz réalisés`;
   }
 }
 
-
+const date = new Date();
+export let year = date.getFullYear();

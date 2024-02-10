@@ -78,7 +78,6 @@
   width: 55%;
   display: flex;
   margin-left: 25%;
-  margin-bottom: 10%;
 }
 
 .container {
@@ -133,10 +132,10 @@ ul li:hover {
 
 .title h1 {
   font-family: var(--typography-h1);
-  color: var(--color-n-dark);
+  color: black;
   margin-left: 25%;
+  font-weight: bolder;
   font-size: xx-large;
-  text-transform: uppercase;
   white-space: wrap;
 }
 

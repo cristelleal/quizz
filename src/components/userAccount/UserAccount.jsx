@@ -74,10 +74,10 @@ function UserAccount() {
         <section className='bg-white mt-12'>
           <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
             <div className='mx-auto max-w-3xl text-center'>
-              <h2 className='text-3xl font-bold text-gray-900 sm:text-4xl'>
-                Bienvenue {name},
+              <h2 className='text-2xl font-bold text-gray-900 sm:text-4xl'>
+                Bienvenue {name}
               </h2>
-              <p className='mt-4 text-gray-500 sm:text-xl'>
+              <p className='mt-4 text-gray-500 sm:text-l'>
                 Ceci est votre espace personnel. Vous y retrouverez les quiz
                 disponibles et l&apos;évolution de vos scores.
               </p>
@@ -91,7 +91,7 @@ function UserAccount() {
                       <span className='underline'>Cliquez ici pour jouer</span>
                     </Link>
                   </dt>
-                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                  <dd className='text-3xl font-extrabold text-red-500 md:text-5xl'>
                     Quiz
                   </dd>
                 </div>
@@ -100,7 +100,7 @@ function UserAccount() {
                   <dt className='order-last text-lg font-medium text-gray-500'>
                     Score total
                   </dt>
-                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
+                  <dd className='text-3xl font-extrabold text-red-500 md:text-5xl flex justify-center align-center'>
                     <CircularProgressbar
                       styles={buildStyles({
                         transition: 'stroke-dashoffset 0.5s ease 0s',
@@ -118,7 +118,7 @@ function UserAccount() {
                   <dt className='order-last text-lg font-medium text-gray-500'>
                   {formatQuizCount(quizzCount)}
                   </dt>
-                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
+                  <dd className='text-3xl font-extrabold text-red-500 md:text-5xl'>
                     {quizzCount}
                   </dd>
                 </div>
@@ -135,7 +135,7 @@ function UserAccount() {
             </div>
           </div>
         </section>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' className='sm:bottom-6 sm:absolute'>
           <path
             fill='#FEF2F2'
             fillOpacity='1'

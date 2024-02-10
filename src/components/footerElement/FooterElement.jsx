@@ -1,9 +1,9 @@
+import { year } from "../../utils/utils";
+
 function FooterElement() {
-  const date = new Date();
-  let year = date.getFullYear();
 
   return (
-    <footer className='bottom-0 bg-red-50 w-full'>
+    <footer className='sm:absolute bottom-0 bg-red-50 w-full'>
       <div className='mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8'>
         <div className='sm:flex sm:items-center sm:justify-between'>
           <div className='flex justify-center text-gray-400 sm:justify-start'>

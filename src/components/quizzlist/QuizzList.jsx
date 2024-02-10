@@ -126,7 +126,7 @@ function QuizzList() {
             </div>
           </div>
         </section>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' className='sm:bottom-6 sm:absolute'>
           <path
             fill='#FEF2F2'
             fillOpacity='1'
