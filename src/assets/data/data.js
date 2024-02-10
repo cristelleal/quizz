@@ -41,7 +41,7 @@ export const data = [
   },
   {
     question:
-      "Quel est le numéro d'urgence à composer en France pour contacter les services médicaux (SAMU) en cas d'urgence médicale ?",
+      "Quel est le numéro à composer en France pour contacter le SAMU en cas d'urgence médicale ?",
     option1: '15',
     option2: '18',
     option3: '112',
