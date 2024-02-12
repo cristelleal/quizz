@@ -60,7 +60,7 @@ function Quizz({ quizzData, title }) {
               { merge: true }
             );
           } catch (error) {
-            console.error('Error updating quizzCount:', error);
+            throw new Error('Error updating quizzCount:', error);
           }
         }
         return 0;
@@ -95,7 +95,7 @@ function Quizz({ quizzData, title }) {
         const authInstance = getAuth();
         await setPersistence(authInstance, browserSessionPersistence);
       } catch (error) {
-        console.error('Error :', error);
+        throw new Error('Error :', error);
       }
     };
 

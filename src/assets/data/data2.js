@@ -63,12 +63,12 @@ export const data2 = [
     {
       question:
         "Comment agir en cas de personne victime d'une crise d'épilepsie ?",
-      option1: 'Maintenir la personne immobile et insérer un objet dans sa bouche',
+      option1: "Maintenir la personne immobile et l'empêcher de s'étouffer avec sa langue",
       option2: 'Éloigner les objets autour de la personne et la laisser se calmer',
       option3: "Donner de l'eau à la personne pour l'hydrater",
       answer: 2,
       advice:
-        "En cas de crise d'épilepsie, il est important d'éloigner les objets autour de la personne pour éviter tout risque de blessure, puis de la laisser se calmer naturellement. Il ne faut jamais insérer d'objet dans la bouche de la personne.",
+        "En cas de crise d'épilepsie, il est important d'éloigner les objets autour de la personne pour éviter tout risque de blessure, puis de la laisser se calmer naturellement. Il ne faut jamais insérer d'objet dans la bouche de la personne, au risque de la blesser et de se blesser également.",
     },
     {
       question:

@@ -37,7 +37,7 @@ function QuizzList() {
                       <svg
                         className='h-6 w-6'
                         fill='none'
-                        stroke='currentColor'
+                        stroke='#EF4444'
                         viewBox='0 0 24 24'
                         xmlns='http://www.w3.org/2000/svg'
                       >
@@ -68,7 +68,7 @@ function QuizzList() {
                       <svg
                         className='h-6 w-6'
                         fill='none'
-                        stroke='currentColor'
+                        stroke='#EF4444'
                         viewBox='0 0 24 24'
                         xmlns='http://www.w3.org/2000/svg'
                       >
@@ -98,7 +98,7 @@ function QuizzList() {
                     <svg
                       className='h-6 w-6'
                       fill='none'
-                      stroke='currentColor'
+                      stroke='gray'
                       viewBox='0 0 24 24'
                       xmlns='http://www.w3.org/2000/svg'
                     >

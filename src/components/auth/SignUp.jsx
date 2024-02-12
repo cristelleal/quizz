@@ -56,7 +56,7 @@ function SignUp() {
         },
         { merge: true }
       );
-      navigate('/userAccount');
+      navigate('/quizzlist');
     } catch (error) {
       return handleFirebaseError(error);
     }
@@ -68,7 +68,7 @@ function SignUp() {
         const authInstance = getAuth();
         await setPersistence(authInstance, browserSessionPersistence);
       } catch (error) {
-        console.error('Error :', error);
+        throw new Error('Error :', error);
       }
     };
 

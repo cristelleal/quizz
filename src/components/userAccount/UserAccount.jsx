@@ -16,6 +16,9 @@ import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
 import Wave from '../wave/Wave';
+import userPic from '../../assets/img/user-profile.png';
+import logout from '../../assets/img/logout.png';
+import Button from '../button/Button';
 import './userAccount.css';
 
 function UserAccount() {
@@ -27,7 +30,7 @@ function UserAccount() {
       navigate('/');
       localStorage.removeItem('name');
     } catch (error) {
-      console.error('Logout error:', error);
+      throw new Error('Logout error:', error);
     }
   };
 
@@ -49,7 +52,7 @@ function UserAccount() {
           setAverageScore(Math.round(totalScore / userData.quizzCount));
         }
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        throw new Error('Error fetching user data:', error);
       }
     }
   };
@@ -61,7 +64,7 @@ function UserAccount() {
         await setPersistence(authInstance, browserSessionPersistence);
         await fetchUserData();
       } catch (error) {
-        console.error('Error persistance user data:', error);
+        throw new Error('Error persistance user data:', error);
       }
     };
 
@@ -75,26 +78,38 @@ function UserAccount() {
         <section className='bg-white mt-12'>
           <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
             <div className='mx-auto max-w-3xl text-center'>
-              <h2 className='text-2xl font-bold text-gray-900 sm:text-4xl'>
-                Bienvenue {name}
+              <h2 className='text-2xl font-bold text-gray-900 sm:text-3xl'>
+                Bienvenue {name} 👋
               </h2>
-              <p className='mt-4 text-gray-500 sm:text-l'>
-                Ceci est votre espace personnel. Vous y retrouverez les quiz
-                disponibles et l&apos;évolution de vos scores.
-              </p>
+            </div>
+
+            <div className='mt-8 flex justify-center'>
+              <div className='flex items-center bg-red-50 p-4 w-2/3 md:w-1/4 rounded-lg gap-x-2'>
+                <img
+                  className='object-cover w-16 h-16 rounded-full'
+                  src={userPic}
+                  alt='profil picture'
+                />
+
+                <div>
+                  <h1 className='text-xl font-semibold text-gray-900 capitalize'>
+                    {name}
+                  </h1>
+
+                  <p className='text-base text-gray-500'>Rescue Quiz Player</p>
+                </div>
+              </div>
             </div>
 
             <div className='mt-8 sm:mt-12'>
               <dl className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
                 <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center flex justify-center align-center'>
-                  <dt className='order-last text-lg font-medium text-gray-500'>
+                  <dt className='flex justify-center order-last text-lg font-medium text-gray-500'>
                     <Link to='/quizzList'>
-                      <button className='underline'>Accéder aux quiz</button>
+                    <Button buttonText="Accéder aux quiz" />
                     </Link>
                   </dt>
-                  <dd className='text-3xl font-extrabold text-red-500 md:text-5xl'>
-                    Quiz
-                  </dd>
+                  <dd className=' text-3xl font-extrabold text-red-500 md:text-5xl'></dd>
                 </div>
 
                 <div className='flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center'>
@@ -119,7 +134,7 @@ function UserAccount() {
                   <dt className='order-last text-lg font-medium text-gray-500'>
                     {formatQuizCount(quizzCount)}
                   </dt>
-                  <dd className='text-3xl font-extrabold text-red-500 md:text-5xl'>
+                  <dd className='text-4xl font-extrabold text-red-500 md:text-5xl'>
                     {quizzCount}
                   </dd>
                 </div>
@@ -129,9 +144,10 @@ function UserAccount() {
             <div className='flex justify-center mt-12 mb-12 cursor-pointer'>
               <div
                 onClick={handleSignOut}
-                className='mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'
+                className='flex mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'
               >
                 Se déconnecter
+                <img src={logout} alt="logout icon" className='logout-icon'/>
               </div>
             </div>
           </div>

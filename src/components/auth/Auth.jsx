@@ -25,7 +25,7 @@ function Auth() {
       const authInstance = getAuth();
       await setPersistence(authInstance, browserSessionPersistence);
       await signInWithEmailAndPassword(authInstance, email, password);
-      navigate('/userAccount');
+      navigate('/quizzlist');
     } catch (error) {
       return handleFirebaseError(error);
     }

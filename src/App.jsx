@@ -15,7 +15,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/useraccount' element={<UserAccount />} />
         <Route path='/' element={<Auth />} />
-        <Route path='quizzList' element={<QuizzList />} />
+        <Route path='quizzlist' element={<QuizzList />} />
         <Route
           path='/quizz'
           element={<Quizz quizzData={data} title='Quiz numéro 1' />}
