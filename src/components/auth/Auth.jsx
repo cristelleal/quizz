@@ -96,18 +96,18 @@ function Auth() {
                   vous amusant.
                 </p>
               </div>
-              <Form
-                handleFormSubmit={handleSignIn}
-                setFormErrorMessage={errorMessage}
-                buttonText='Se connecter'
-              />
-              <Link to='/signup'>
-                <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
-                  <span className='text-gray-700 underline'>
-                    Créér un compte
-                  </span>
-                </p>
-              </Link>
+                <Form
+                  handleFormSubmit={handleSignIn}
+                  setFormErrorMessage={errorMessage}
+                  buttonText='Se connecter'
+                />
+                <Link to='/signup'>
+                  <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
+                    <span className='text-gray-700 underline'>
+                      Créér un compte
+                    </span>
+                  </p>
+                </Link>
             </div>
           </main>
         </div>

@@ -164,7 +164,7 @@ function SignUp() {
               <Link to='/'>
                 <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
                   <span className='text-gray-700 underline mr-4'>
-                    S&apos;authentifier
+                    S&apos;identifier
                   </span>
                 </p>
               </Link>
