@@ -1,7 +1,6 @@
-import { currentYear } from "../../utils/utils";
+import { currentYear } from '../../utils/utils';
 
 function FooterElement() {
-
   return (
     <footer className='bottom-0 bg-red-50 w-full'>
       <div className='mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8'>

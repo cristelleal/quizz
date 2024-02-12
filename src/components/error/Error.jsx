@@ -6,7 +6,7 @@ function Error() {
     <div className='flex h-screen flex-col bg-white'>
       <img
         src={backgroundImage}
-        alt=''
+        alt='first aid kit background'
         className='h-64 w-full object-cover'
       />
 
