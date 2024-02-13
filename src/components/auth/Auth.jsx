@@ -99,7 +99,7 @@ function Auth() {
                 <Form
                   handleFormSubmit={handleSignIn}
                   setFormErrorMessage={errorMessage}
-                  buttonText='Se connecter'
+                  buttonText='Créer un compte'
                 />
                 <Link to='/signup'>
                   <p className='mt-12 text-sm text-gray-500 text-center sm:mt-4'>
