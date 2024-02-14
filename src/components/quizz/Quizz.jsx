@@ -103,7 +103,7 @@ function Quizz({ quizzData, title }) {
   }, []);
 
   return (
-    <>
+    <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
         <Navbar />
         <div className='p-4'></div>
@@ -210,7 +210,7 @@ function Quizz({ quizzData, title }) {
         <Wave />
         <FooterElement />
       </AuthChecker>
-    </>
+    </div>
   );
 }
 

@@ -72,7 +72,7 @@ function UserAccount() {
   }, []);
 
   return (
-    <>
+    <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
         <Navbar />
         <section className='bg-white mt-12'>
@@ -155,7 +155,7 @@ function UserAccount() {
         <Wave />
         <FooterElement />
       </AuthChecker>
-    </>
+    </div>
   );
 }
 

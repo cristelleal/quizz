@@ -4,7 +4,7 @@ function Wave() {
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 1440 320'
-        className='bottom-0 lg:bottom-6'
+        className='mt-auto bottom-0 lg:bottom-6'
       >
         <path
           fill='#FEF2F2'
