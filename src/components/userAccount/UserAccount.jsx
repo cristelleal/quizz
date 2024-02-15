@@ -96,7 +96,7 @@ function UserAccount() {
                     {name}
                   </h1>
 
-                  <p className='text-base text-gray-500'>Rescue Quiz Player</p>
+                  <p className='text-base text-gray-500'>RQ Player</p>
                 </div>
               </div>
             </div>

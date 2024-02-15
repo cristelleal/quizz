@@ -7,14 +7,16 @@ import { data } from './assets/data/data';
 import { data2 } from './assets/data/data2';
 import QuizzList from './components/quizzlist/QuizzList';
 import Error from './components/error/Error';
+import Home from './components/home/Home';
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path='/auth' element={<Auth />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/useraccount' element={<UserAccount />} />
-        <Route path='/' element={<Auth />} />
+        <Route path='/' element={<Home />} />
         <Route path='quizzlist' element={<QuizzList />} />
         <Route
           path='/quizz'
