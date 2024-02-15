@@ -6,7 +6,7 @@ import FooterElement from '../footerElement/FooterElement';
 
 function Home() {
   return (
-    <div className='min-h-screen flex flex-col justify-start'>
+    <div className='bg-white min-h-screen flex flex-col justify-start'>
       <section>
         <div className='max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8'>
           <div className='space-y-5 max-w-4xl mx-auto text-center'>
@@ -46,7 +46,10 @@ function Home() {
             <img
               src={backgroundImage}
               className='w-4/5 sm:w-1/3 shadow-lg rounded-lg border'
-              style={{ transform: 'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)' }}
+              style={{
+                transform:
+                  'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)',
+              }}
               alt='quiz question interface example'
             />
           </div>
