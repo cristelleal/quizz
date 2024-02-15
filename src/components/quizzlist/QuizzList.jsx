@@ -1,4 +1,3 @@
-import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
 import { Link } from 'react-router-dom';
@@ -8,7 +7,6 @@ function QuizzList() {
   return (
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
-        <Navbar />
         <section className='bg-white mt-12 mb-12 w-full'>
           <div className='max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16'>
             <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>

@@ -88,7 +88,7 @@ function UserAccount() {
                 <img
                   className='object-cover w-16 h-16 rounded-full'
                   src={userPic}
-                  alt='profil picture'
+                  alt='fake profil picture'
                 />
 
                 <div>
