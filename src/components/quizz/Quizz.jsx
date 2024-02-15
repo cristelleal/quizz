@@ -172,13 +172,13 @@ function Quizz({ quizzData, title }) {
                 {isScoreAboveHalf ? (
                   <div className='result-container'>
                     <p className='score-infos'>
-                      Félicitations ! Excellent score, continuez comme ça !
+                      Félicitations ! Vous avez obtenu un score supérieur à la moyenne, continuez comme ça !
                     </p>
                   </div>
                 ) : (
                   <div className='result-container'>
                     <p className='score-infos'>
-                      Vous avez obtenu un score inférieur à la moyenne.
+                      Vous avez obtenu un score inférieur ou égal à la moyenne.
                       <br />
                       <a
                         className='link'
