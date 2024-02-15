@@ -46,6 +46,7 @@ function Home() {
             <img
               src={backgroundImage}
               className='w-4/5 sm:w-1/3 shadow-lg rounded-lg border'
+              style={{ transform: 'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)' }}
               alt='quiz question interface example'
             />
           </div>
