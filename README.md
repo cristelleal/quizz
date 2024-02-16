@@ -1,7 +1,7 @@
 # <p align="center">Rescue Quiz </p>
   
-This is first aid web quiz interface 🚑
-<br> It's a personal front-end web development project
+This is a personal project I build for fun (and for learning ReactJS)
+<br> This is a first aid web small quiz interface 🚑 with Firebase authentification.
 
 ## 🛠️ Tech Stack
 - [React](https://reactjs.org/)
