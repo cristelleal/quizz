@@ -154,7 +154,9 @@ function Quizz({ quizzData, title }) {
                 </div>
                 {showAdvice && (
                   <div className='bg-red-50 p-4 rounded text-gray-700 text-sm'>
-                    <p>💡 {question.advice}</p>
+                    <p className='transition transition-all'>
+                      💡 {question.advice}
+                    </p>
                   </div>
                 )}
                 <div className='index'>

@@ -7,7 +7,7 @@ function QuizzList() {
   return (
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
-        <section className='bg-white mt-12 mb-12 w-full'>
+        <section className='bg-white mt-12 mb-12 mx-4 shadow-sm border border-gray-100 rounded'>
           <div className='max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16'>
             <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
               <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
@@ -37,8 +37,7 @@ function QuizzList() {
                   <br />
                   Testez vos connaissances à travers des quiz variés, adaptés à
                   tous les niveaux. Suivez votre progression dans votre espace
-                  personnel. Prêt à devenir un expert des gestes qui sauvent ?
-                  Lancez-vous !
+                  personnel. Prêt à devenir un expert des gestes de secours ?
                 </p>
                 <Link to='/useraccount'>
                   <a className='mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400'>
@@ -140,7 +139,7 @@ function QuizzList() {
                   </div>
                 </Link>
 
-                <div className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
+                <div className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring cursor-not-allowed'>
                   <span className='inline-block rounded-lg bg-gray-50 p-3'>
                     <svg
                       className='h-6 w-6'

@@ -82,7 +82,7 @@
 
 .container {
   margin-top: 2%;
-  margin: auto;
+  margin: 0 4px 0 4px;
   background-color: var(--color-n-white);
   display: flex;
   flex-direction: column;
@@ -203,7 +203,6 @@ ul li:hover {
     height: auto;
     gap: 20px;
     padding: 5% 6%;
-    box-shadow: none;
   }
 
   .title h1 {

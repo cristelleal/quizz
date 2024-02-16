@@ -7,7 +7,7 @@ export const data = [
     option3: "La manœuvre d'Heimlich",
     answer: 3,
     advice:
-      "La manœuvre d'Heimlich implique une compression soudaine de la base du thorax et de la partie supérieure de l'abdomen de la victime, provoquant une ascension rapide du diaphragme et une surpression dans les voies respiratoires. Cette technique est exécutée en position debout : en se plaçant derrière le malade, enlaçant ses bras, avec les deux mains positionnées au-dessus de l'ombilic. Ensuite, effectuer un mouvement brusque de compression vers le haut.",
+      "La manœuvre d'Heimlich implique une compression soudaine de la base du thorax et de la partie supérieure de l'abdomen de la victime, provoquant une ascension rapide du diaphragme et une surpression dans les voies respiratoires. Cette technique est exécutée en position debout : en se plaçant derrière la victime, enlaçant ses bras, avec les deux mains positionnées au-dessus de l'ombilic. Ensuite, effectuer un mouvement brusque de compression vers le haut.",
   },
   {
     question:
@@ -27,7 +27,7 @@ export const data = [
     option3: 'Danger non vital, réel, imminent et contrôlable',
     answer: 2,
     advice:
-      'Hors danger réel, vital, imminent et non contrôlable, il faut sécuriser la victime sans la déplacer et attendre les secours',
+      'Hors danger réel, vital, imminent et non contrôlable, il faut sécuriser la victime sans la déplacer (car cela peut aggraver son état) et attendre les secours.',
   },
   {
     question:
@@ -47,7 +47,7 @@ export const data = [
     option3: '112',
     answer: 1,
     advice:
-      "Le numéro du Service d'Aide Médicale Urgente (SAMU) en France est le 15. Ce numéro est accessible gratuitement et permet d'être mis en relation avec une équipe médicale lors d'une situation de détresse vitale.",
+      "Le numéro du Service d'Aide Médicale Urgente (SAMU) en France est le 15. Ce numéro est accessible gratuitement et permet d'être mis en relation avec une équipe médicale lors d'une situation de détresse vitale. Le 18 correspond aux Pompiers et le 112 est le numéro d'urgence européén.",
   },
   {
     question:
@@ -57,27 +57,27 @@ export const data = [
     option3: 'Prévention et Secours Civiques de niveau 1',
     answer: 3,
     advice:
-      "Le certificat prévention et secours civiques de niveau 1, en abrégé PSC1, est la formation de base aux premiers secours en France. Elle remplace depuis 2007 l'attestation de formation aux premiers secours, AFPS.",
+      "Le Certificat Prévention et Secours Civiques de niveau 1, en abrégé PSC1, est la formation de base aux premiers secours en France. Elle remplace depuis 2007 l'attestation de formation aux premiers secours, AFPS.",
   },
   {
-    question: "Un signe de l'arrêt cardiaque :",
+    question: "Un signe de l'infarctus :",
     option1: 'Douleur dans la poitrine',
     option2: 'Déformation de la face',
     option3:
       'Difficulté de langage (incohérence de la parole) ou de compréhension',
     answer: 1,
     advice:
-      "L'arrêt cardiaque se manifeste par une perte soudaine de la fonction cardiaque, de la respiration et de l'état de conscience. Cette situation d'urgence médicale peut survenir de manière imprévisible chez des individus de tous âges et de toute condition physique.",
+      "L'infarctus du myocarde se manifeste souvent par une douleur thoracique d'apparition brutale et intense, avec irradiation dans la mâchoire ou dans le bras. Elle peut s'accompagner d'autres symptômes : malaise, essouflement, sensations de fourmillements dans le bras gauche, etc... Cette situation d'urgence médicale peut survenir de manière imprévisible chez des individus de tous âges et de toute condition physique.",
   },
   {
-    question: 'La crise cardiaque chez la femme :',
-    option1: "Est identique à la crise cardiaque chez l'homme",
+    question: "l'infarctus chez la femme :",
+    option1: "Est identique à l'infarctus chez l'homme",
     option2:
       'Peut se manifester par un essouflement, des douleurs abdominales et une fatigue importante',
-    option3: "Est moins fréquente que chez l'homme",
+    option3: "Est moins fréquent que chez l'homme",
     answer: 2,
     advice:
-      "Les signes d'une crise cardiaque (infarctus du myocarde) chez la femme diffèrent parfois de ceux chez l'homme. Bien que la douleur ou l'inconfort thoracique soit le symptôme le plus courant, les femmes peuvent subir une crise cardiaque sans ressentir de pression à la poitrine. Leurs symptômes peuvent inclure un essoufflement, une pression ou une douleur à la mâchoire, dans le haut du dos, dans la partie inférieure du thorax ou dans la partie supérieure de l'abdomen. D'autres signes possibles comprennent des étourdissements, un évanouissement ou une fatigue extrême.",
+      "Les signes de l'infarctus du myocarde chez la femme diffèrent parfois de ceux chez l'homme. Bien que la douleur ou l'inconfort thoracique soit le symptôme le plus courant, les femmes peuvent subir une crise cardiaque sans ressentir de pression à la poitrine. Leurs symptômes peuvent inclure un essoufflement, une pression ou une douleur à la mâchoire, dans le haut du dos, dans la partie inférieure du thorax ou dans la partie supérieure de l'abdomen. D'autres signes possibles comprennent des étourdissements, un évanouissement ou une fatigue extrême.",
   },
   {
     question: "Un signe de l'AVC (Accident Vasculaire Cérébral) :",
@@ -95,7 +95,7 @@ export const data = [
     option3: '30 massages / 2 insufflations',
     answer: 3,
     advice:
-      "Lors d'un arrêt cardiaque, agir peut sauver des vies. Appeler le 15, le SAMU, pour prévenir les secours. Commencer immédiatement le massage cardiaque. Si d'autres personnes sont présentes, leur demander de s'informer : un défibrillateur est-il disponible à proximité ? Si oui, aller le chercher aussi vite que possible",
+      "Lors d'un arrêt cardiaque, agir peut sauver des vies. Appeler le 15, le SAMU, pour prévenir les secours. Commencer immédiatement le massage cardiaque. Si d'autres personnes sont présentes, leur demander de s'informer : un défibrillateur est-il disponible à proximité ? Si oui, aller le chercher aussi vite que possible.",
   },
   {
     question: "L'utilisation d'un défibrillateur est réservée :",
@@ -104,7 +104,7 @@ export const data = [
     option3: "Au propriétaire de l'appareil",
     answer: 1,
     advice:
-      "Depuis le décret du 4 mai 2007, l'utilisation des Défibrillateurs Automatiques Externes (DAE) est autorisée à toute personne. Cette mesure a incité de nombreuses entreprises et responsables d'espaces publics à s'équiper de ces dispositifs",
+      "Depuis le décret du 4 mai 2007, l'utilisation des Défibrillateurs Automatiques Externes (DAE) est autorisée à toute personne. Cette mesure a incité de nombreuses entreprises et responsables d'espaces publics à s'équiper de ces dispositifs.",
   },
   {
     question: 'Un défibrillateur analyse :',

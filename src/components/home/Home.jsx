@@ -45,7 +45,7 @@ function Home() {
           <div className='mt-12 flex justify-center items-center'>
             <img
               src={backgroundImage}
-              className='w-4/5 sm:w-1/3 shadow-lg rounded-lg border'
+              className='w-4/5 sm:w-2/5 shadow-lg rounded-lg border'
               style={{
                 transform:
                   'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)',
