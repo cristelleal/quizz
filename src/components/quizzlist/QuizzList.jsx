@@ -2,12 +2,14 @@ import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
 import { Link } from 'react-router-dom';
 import Wave from '../wave/Wave';
+import Navigation from '../navigation/Navigation';
 
 function QuizzList() {
   return (
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
-        <section className='bg-white mt-12 mb-12 mx-4 shadow-sm border border-gray-100 rounded'>
+        <Navigation />
+        <section className='bg-white/95 mt-4 mb-12 mx-2 shadow-sm border border-gray-100 rounded'>
           <div className='max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16'>
             <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
               <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
@@ -48,7 +50,7 @@ function QuizzList() {
 
               <div className='grid grid-cols-2 gap-4 sm:grid-cols-3'>
                 <Link to='/quizz'>
-                  <div className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
+                  <div className='bg-white block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
                     <span className='inline-block rounded-lg bg-gray-50 p-3'>
                       <svg
                         className='h-6 w-6'
@@ -79,7 +81,7 @@ function QuizzList() {
                 </Link>
 
                 <Link to='/quizz2'>
-                  <div className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
+                  <div className='bg-white block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
                     <span className='inline-block rounded-lg bg-gray-50 p-3'>
                       <svg
                         className='h-6 w-6'
@@ -109,7 +111,7 @@ function QuizzList() {
                   </div>
                 </Link>
                 <Link to='/quizz3'>
-                  <div className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
+                  <div className='bg-white block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring'>
                     <span className='inline-block rounded-lg bg-gray-50 p-3'>
                       <svg
                         className='h-6 w-6'
@@ -139,7 +141,7 @@ function QuizzList() {
                   </div>
                 </Link>
 
-                <div className='block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring cursor-not-allowed'>
+                <div className='bg-white block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring cursor-not-allowed'>
                   <span className='inline-block rounded-lg bg-gray-50 p-3'>
                     <svg
                       className='h-6 w-6'

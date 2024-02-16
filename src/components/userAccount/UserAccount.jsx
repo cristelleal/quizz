@@ -10,12 +10,12 @@ import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { formatQuizCount } from '../../utils/utils';
-import Navbar from '../navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
 import Wave from '../wave/Wave';
 import Button from '../button/Button';
 import './userAccount.css';
+import Navigation from '../navigation/Navigation';
 
 function UserAccount() {
   const [name, setName] = useState('');
@@ -58,8 +58,8 @@ function UserAccount() {
   return (
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
-        <Navbar />
-        <section className='bg-white mt-12 mx-4 shadow-sm border border-gray-100 rounded'>
+        <Navigation />
+        <section className='bg-white/95 mt-4 mx-2 shadow-sm border border-gray-100 rounded'>
           <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
             <div className='mx-auto max-w-3xl text-center'>
               <h2 className='text-2xl font-bold text-gray-900 sm:text-3xl'>
@@ -75,7 +75,7 @@ function UserAccount() {
 
             <div className='mt-6'>
               <dl className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-                <div className='flex flex-col rounded-lg border border-gray-100 p-4 shadow-sm px-4 py-8 text-center'>
+                <div className='bg-white flex flex-col rounded-lg border border-gray-100 p-4 shadow-sm px-4 py-8 text-center'>
                   <dt className='order-last text-lg font-medium text-gray-500'>
                     Score total
                   </dt>
@@ -93,7 +93,7 @@ function UserAccount() {
                   </dd>
                 </div>
 
-                <div className='flex flex-col rounded-lg border border-gray-100 p-4 shadow-sm px-4 py-8 text-center flex justify-center align-center'>
+                <div className='bg-white flex flex-col rounded-lg border border-gray-100 p-4 shadow-sm px-4 py-8 text-center flex justify-center align-center'>
                   <dt className='order-last text-lg font-medium text-gray-500'>
                     {formatQuizCount(quizzCount)}
                   </dt>

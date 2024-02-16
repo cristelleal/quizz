@@ -6,7 +6,7 @@ import FooterElement from '../footerElement/FooterElement';
 
 function Home() {
   return (
-    <div className='bg-white min-h-screen flex flex-col justify-start'>
+    <div className='bg-white/95 min-h-screen flex flex-col justify-start'>
       <section>
         <div className='max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8'>
           <div className='space-y-5 max-w-4xl mx-auto text-center'>

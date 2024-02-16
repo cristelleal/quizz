@@ -82,7 +82,7 @@
 
 .container {
   margin-top: 2%;
-  margin: 0 4px 0 4px;
+  margin: 0 8px 0 8px;
   background-color: var(--color-n-white);
   display: flex;
   flex-direction: column;

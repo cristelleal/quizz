@@ -8,7 +8,6 @@ import {
   browserSessionPersistence,
 } from 'firebase/auth';
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
-import Navbar from '../../components/navbar/Navbar';
 import FooterElement from '../footerElement/FooterElement';
 import Button from '../button/Button';
 import Wave from '../wave/Wave';
@@ -16,6 +15,7 @@ import AuthChecker from '../authChecker/authChecker';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './quizz.css';
+import Navigation from '../navigation/Navigation';
 
 function Quizz({ quizzData, title }) {
   let [index, setIndex] = useState(0);
@@ -108,8 +108,8 @@ function Quizz({ quizzData, title }) {
   return (
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
-        <Navbar />
-        <div className='p-4'></div>
+      <Navigation />
+        <div className='p-2'></div>
         <main className='main-section'>
           <div className='container'>
             <div className='title'>
