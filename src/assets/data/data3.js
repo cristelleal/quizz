@@ -19,7 +19,7 @@ export const data3 = [
     option3: 'Confusion, maux de tête, et repos au lit pendant plusieurs jours',
     answer: 1,
     advice:
-      "Les signes d'une commotion cérébrale peuvent inclure des troubles de la vision, des nausées, de la confusion, et des maux de tête. En cas de suspicion de commotion cérébrale, il est essentiel de consulter immédiatement un professionnel de la santé pour un diagnostic approprié",
+      "Les signes d'une commotion cérébrale peuvent inclure des troubles de la vision, des nausées, de la confusion, et des maux de tête. En cas de suspicion de commotion cérébrale, il est essentiel de consulter immédiatement un professionnel de la santé pour un diagnostic approprié.",
   },
   {
     question:
@@ -32,7 +32,7 @@ export const data3 = [
       "La syncope est une perte de conscience brève et spontanée, tandis que la crise d'épilepsie est généralement déclenchée par des facteurs spécifiques",
     answer: 3,
     advice:
-      "La principale différence entre une crise d'épilepsie et une syncope est que la syncope est une perte de conscience brève et spontanée, tandis que la crise d'épilepsie est généralement déclenchée par des facteurs spécifiques, tels que des stimuli lumineux ou des émotions intenses",
+      "La principale différence entre une crise d'épilepsie et une syncope est que la syncope est une perte de conscience brève et spontanée, tandis que la crise d'épilepsie est généralement déclenchée par des facteurs spécifiques, tels que des stimuli lumineux ou des émotions intenses.",
   },
   {
     question:
@@ -42,7 +42,7 @@ export const data3 = [
     option3: 'Appliquer une pommade anti-brûlure immédiatement',
     answer: 2,
     advice:
-      "En cas de brûlure chimique sur la peau, il est important de rincer abondamment la zone affectée à l'eau pendant au moins 20 minutes. Cela aide à éliminer la substance chimique et à réduire les dommages. L'application de glace ou de pommade n'est généralement pas recommandée",
+      "En cas de brûlure chimique sur la peau, il est important de rincer abondamment la zone affectée à l'eau pendant au moins 20 minutes. Cela aide à éliminer la substance chimique et à réduire les dommages. L'application de glace ou de pommade n'est généralement pas recommandée.",
   },
   {
     question:
@@ -54,7 +54,7 @@ export const data3 = [
       'Effectuer la manœuvre de Heimlich, en plaçant les mains plus haut sur le sternum',
     answer: 3,
     advice:
-      "Lors de l'administration de la manœuvre de Heimlich sur une personne enceinte, il faut placer les mains plus haut sur le sternum, juste en dessous de la poitrine. Cela permet d'éviter de mettre une pression excessive sur l'abdomen et de protéger le fœtus",
+      "Lors de l'administration de la manœuvre de Heimlich sur une personne enceinte, il faut placer les mains plus haut sur le sternum, juste en dessous de la poitrine. Cela permet d'éviter de mettre une pression excessive sur l'abdomen et de protéger le fœtus.",
   },
   {
     question:
@@ -66,7 +66,7 @@ export const data3 = [
       "Forte toux, qui ne cesse pas malgré les traitements administrés, accompagnée d'une forte fièvre",
     answer: 2,
     advice:
-      "Une crise d'asthme sévère se caractérise par une difficulté respiratoire intense, une respiration sifflante sévère et une utilisation fréquente des muscles respiratoires accessoires. Il est crucial d'appeler les secours (15 ou 112 en France) et d'administrer la médication d'urgence prescrite si disponible",
+      "Une crise d'asthme sévère se caractérise par une difficulté respiratoire intense, une respiration sifflante sévère et une utilisation fréquente des muscles respiratoires accessoires. Il est crucial d'appeler les secours (15 ou 112 en France) et d'administrer la médication d'urgence prescrite si disponible.",
   },
   {
     question:
@@ -79,7 +79,7 @@ export const data3 = [
       'Maintenir la personne immobile et tenter de bloquer ses mouvements pour éviter les blessures',
     answer: 2,
     advice:
-      'En cas de crise convulsive prolongée, il est important de placer la personne en position latérale de sécurité pour éviter tout risque de blessure. Il faut ensuite appeler les secours (15 ou 112 en France) pour obtenir une assistance médicale',
+      'En cas de crise convulsive prolongée, il est important de placer la personne en position latérale de sécurité pour éviter tout risque de blessure. Il faut ensuite appeler les secours (15 ou 112 en France) pour obtenir une assistance médicale.',
   },
   {
     question:
