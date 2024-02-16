@@ -1,10 +1,23 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase.config';
+import { signOut, getAuth } from 'firebase/auth';
+import logout from '../../assets/img/logout.png';
+import '../navbar/navbar.css';
 
 function Navbar() {
-  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+  const handleSignOut = async () => {
+    try {
+      getAuth();
+      await signOut(auth);
+      navigate('/');
+      localStorage.removeItem('name');
+    } catch (error) {
+      throw new Error('Logout error:', error);
+    }
+  };
+  const [user, loading] = useAuthState(auth);
 
   const handleClick = () => {
     if (user) {
@@ -20,7 +33,7 @@ function Navbar() {
 
   return (
     <>
-      <header className='bg-white shadow-md'>
+      <header className='bg-white shadow-sm border border-gray-100'>
         <div className='mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8'>
           <Link to='/quizzlist'>
             <div className='block text-red-500'>
@@ -45,14 +58,20 @@ function Navbar() {
           </Link>
           <div className='flex flex-1 items-center justify-end md:justify-between'>
             <nav aria-label='Global' className='hidden md:block'></nav>
-            <div className='flex items-center gap-4'>
-              <div className='sm:flex sm:gap-4'>
+            <div className='flex items-center gap-2'>
+              <div className='sm:flex sm:gap-'>
                 <div
                   className='block rounded-md bg-red-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-red-600 cursor-pointer'
                   onClick={handleClick}
                 >
                   Mon compte
                 </div>
+              </div>
+              <div
+                onClick={handleSignOut}
+                className='block rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-700 cursor-pointer'
+              >
+                <img src={logout} alt='logout icon' className='logout-icon' />
               </div>
             </div>
           </div>
