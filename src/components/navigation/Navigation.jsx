@@ -37,7 +37,7 @@ function Navigation() {
       <ol className='flex items-center gap-1 text-sm text-white'>
         <li>
           <Link to='/quizzlist'>
-            <div className='block transition hover:text-white cursor-pointer'>
+            <div className='block transition cursor-pointer'>
               <span className='sr-only'> Home </span>
 
               <svg

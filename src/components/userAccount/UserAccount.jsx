@@ -59,7 +59,7 @@ function UserAccount() {
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
         <Navigation />
-        <section className='bg-white/95 mt-4 mx-2 shadow-sm border border-gray-100 rounded'>
+        <section className='bg-white/95 mt-4 mx-2 sm:mx-12 shadow-sm border border-gray-100 rounded'>
           <div className='mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8'>
             <div className='mx-auto max-w-3xl text-center'>
               <h2 className='text-2xl font-bold text-gray-900 sm:text-3xl'>

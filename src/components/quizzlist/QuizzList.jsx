@@ -9,10 +9,10 @@ function QuizzList() {
     <div className='min-h-screen flex flex-col justify-start'>
       <AuthChecker>
         <Navigation />
-        <section className='bg-white/95 mt-4 mb-12 mx-2 shadow-sm border border-gray-100 rounded'>
+        <section className='bg-white/95 mt-4 mb-12 mx-2 sm:mx-12 shadow-sm border border-gray-100 rounded'>
           <div className='max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16'>
             <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
-              <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
+              <div className='mx-auto max-w-lg text-center lg:mx-0'>
                 <div className='flex justify-center items-center space-x-2'>
                   <svg
                     width='30'
