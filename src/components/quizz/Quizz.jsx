@@ -23,6 +23,7 @@ function Quizz({ quizzData, title }) {
   const [lock, setLock] = useState(false);
   const [score, setScore] = useState(0);
   const [result, setResult] = useState(false);
+  const [showAdvice, setShowAdvice] = useState(false);
 
   let option1 = useRef(null);
   let option2 = useRef(null);
@@ -40,6 +41,7 @@ function Quizz({ quizzData, title }) {
         element.target.classList.add('wrong');
         setLock(true);
         optionArray[question.answer - 1].current.classList.add('correct');
+        setShowAdvice(true);
       }
     }
   };
@@ -68,6 +70,7 @@ function Quizz({ quizzData, title }) {
       setIndex((index += 1));
       setQuestion(quizzData[index]);
       setLock(false);
+      setShowAdvice(false);
       optionArray.forEach((option) => {
         option.current.classList.remove('wrong', 'correct');
       });
@@ -149,6 +152,11 @@ function Quizz({ quizzData, title }) {
                 <div className='flex justify-center'>
                   <Button buttonText='Suivant' handleClick={next} />
                 </div>
+                {showAdvice && (
+                  <div className='bg-red-50 p-4 rounded text-gray-700 text-sm'>
+                    <p>💡 {question.advice}</p>
+                  </div>
+                )}
                 <div className='index'>
                   {index + 1} sur {quizzData.length} questions
                 </div>
@@ -172,7 +180,8 @@ function Quizz({ quizzData, title }) {
                 {isScoreAboveHalf ? (
                   <div className='result-container'>
                     <p className='score-infos'>
-                      Félicitations ! Vous avez obtenu un score supérieur à la moyenne, continuez comme ça !
+                      Félicitations ! Vous avez obtenu un score supérieur à la
+                      moyenne, continuez comme ça !
                     </p>
                   </div>
                 ) : (
