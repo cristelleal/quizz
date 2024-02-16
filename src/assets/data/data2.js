@@ -45,7 +45,7 @@ export const data2 = [
       question:
         "Quelle est la position à adopter en cas de perte de conscience d'une personne qui respire normalement ?",
       option1: 'La position latérale de sécurité (PLS)',
-      option2: 'La position assise avec la tête baissée entre les genoux',
+      option2: 'La position demi-assise',
       option3: 'Allonger la personne sur le dos avec les jambes surélevées',
       answer: 1,
       advice:
@@ -53,8 +53,8 @@ export const data2 = [
     },
     {
       question: "Quel est le rôle d'un défibrillateur automatique externe (DAE) ?",
-      option1: 'Arrêter le saignement',
-      option2: 'Rétablir le rythme cardiaque normal',
+      option1: 'Arrêter un saignement',
+      option2: 'Rétablir un rythme cardiaque normal',
       option3: 'Administer des médicaments',
       answer: 2,
       advice:

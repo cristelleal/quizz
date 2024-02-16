@@ -5,6 +5,7 @@ import UserAccount from './components/userAccount/UserAccount';
 import Quizz from './components/quizz/Quizz';
 import { data } from './assets/data/data';
 import { data2 } from './assets/data/data2';
+import { data3 } from './assets/data/data3';
 import QuizzList from './components/quizzlist/QuizzList';
 import Error from './components/error/Error';
 import Home from './components/home/Home';
@@ -25,6 +26,10 @@ function App() {
         <Route
           path='/quizz2'
           element={<Quizz quizzData={data2} title='Quiz numéro 2' />}
+        />
+        <Route
+          path='/quizz3'
+          element={<Quizz quizzData={data3} title='Quiz numéro 3' />}
         />
         <Route path='*' element={<Error />} />
       </Routes>
