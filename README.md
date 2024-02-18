@@ -1,6 +1,6 @@
 # <p align="center">Rescue Quiz </p>
   
-This is a personal project I build for fun (and for learning ReactJS)
+This is a personal project I did for learning ReactJS.
 <br> This is a first aid web small quiz interface 🚑 with Firebase authentification.
 
 ## 🛠️ Tech Stack
