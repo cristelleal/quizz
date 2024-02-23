@@ -1,7 +1,6 @@
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
 import { Link } from 'react-router-dom';
-import Wave from '../wave/Wave';
 import Navigation from '../navigation/Navigation';
 
 function QuizzList() {
@@ -175,7 +174,6 @@ function QuizzList() {
             </div>
           </div>
         </section>
-        <Wave />
         <FooterElement />
       </AuthChecker>
     </div>

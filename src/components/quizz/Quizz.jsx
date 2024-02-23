@@ -10,7 +10,6 @@ import {
 import { increment, doc, setDoc, arrayUnion } from 'firebase/firestore';
 import FooterElement from '../footerElement/FooterElement';
 import Button from '../button/Button';
-import Wave from '../wave/Wave';
 import AuthChecker from '../authChecker/authChecker';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -154,7 +153,7 @@ function Quizz({ quizzData, title }) {
                 </div>
                 {showAdvice && (
                   <div className='bg-red-50 p-4 rounded text-gray-700 text-sm'>
-                    <p className='transition transition-all'>
+                    <p>
                       💡 {question.advice}
                     </p>
                   </div>
@@ -218,7 +217,6 @@ function Quizz({ quizzData, title }) {
             )}
           </div>
         </main>
-        <Wave />
         <FooterElement />
       </AuthChecker>
     </div>

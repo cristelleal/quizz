@@ -47,7 +47,7 @@ export const data = [
     option3: '112',
     answer: 1,
     advice:
-      "Le numéro du Service d'Aide Médicale Urgente (SAMU) en France est le 15. Ce numéro est accessible gratuitement et permet d'être mis en relation avec une équipe médicale lors d'une situation de détresse vitale. Le 18 correspond aux Pompiers et le 112 est le numéro d'urgence européén.",
+      "Le numéro du Service d'Aide Médicale Urgente (SAMU) en France est le 15. Ce numéro est accessible gratuitement et permet d'être mis en relation avec une équipe médicale lors d'une situation de détresse vitale. Le 18 correspond aux Pompiers et le 112 est le numéro d'urgence européen.",
   },
   {
     question:

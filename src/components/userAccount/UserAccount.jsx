@@ -12,7 +12,6 @@ import 'react-circular-progressbar/dist/styles.css';
 import { formatQuizCount } from '../../utils/utils';
 import FooterElement from '../footerElement/FooterElement';
 import AuthChecker from '../authChecker/authChecker';
-import Wave from '../wave/Wave';
 import Button from '../button/Button';
 import './userAccount.css';
 import Navigation from '../navigation/Navigation';
@@ -105,7 +104,6 @@ function UserAccount() {
             </div>
           </div>
         </section>
-        <Wave />
         <FooterElement />
       </AuthChecker>
     </div>

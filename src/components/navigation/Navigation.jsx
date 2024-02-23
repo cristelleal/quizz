@@ -65,7 +65,7 @@ function Navigation() {
         <li>
           <div
             onClick={handleClick}
-            className='block transition hover:text-white cursor-pointer'
+            className='block transition hover:underline cursor-pointer'
           >
             Espace personnel
           </div>
@@ -78,7 +78,7 @@ function Navigation() {
         <li>
           <div
             onClick={handleSignOut}
-            className='block transition hover:text-white cursor-pointer'
+            className='block transition hover:underline cursor-pointer'
           >
             Se déconnecter
           </div>
